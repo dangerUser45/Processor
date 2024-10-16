@@ -1,4 +1,5 @@
-#include "Stack_for_proc\Common.h"
+#pragma once
+
 enum CMD {
     hlt  = -1,
     push =  1,
@@ -7,11 +8,4 @@ enum CMD {
     mul  =  4,
     div  =  5
 
-};
-
-struct ASM  
-{
-    FILE* orig_file;
-    FILE* final_file;
-    size_t size_of_file;
 };

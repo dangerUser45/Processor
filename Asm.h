@@ -1,4 +1,4 @@
-#include "Stack_for_proc\Common.h"
+#pragma once
 
 struct ASM  
 {
@@ -9,3 +9,10 @@ struct ASM
     size_t size_of_file;
 
 };
+
+struct label
+{
+
+};
+
+typedef int el_t;

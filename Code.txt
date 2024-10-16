@@ -1,0 +1,4 @@
+push 10
+pop 20
+add
+mul

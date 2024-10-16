@@ -1,5 +1,6 @@
+#ifndef COMMON_H_INCLUDED
+#define COMMON_H_INCLUDED
 
-#include "TXLib.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
@@ -77,3 +78,4 @@ struct stack_t
     ONDEBUG(stack_el_t canary2_struct;)
 };
 
+#endif

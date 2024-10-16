@@ -1,0 +1,47 @@
+asm.cpp: In function 'int main(int, char**)':
+asm.cpp:10:9: warning: variable 'data_asm' set but not used [-Wunused-but-set-variable]
+   10 |     ASM data_asm = {};
+      |         ^~~~~~~~
+asm.cpp: At global scope:
+asm.cpp:35:5: warning: no previous declaration for 'int Asm_Ctor(ASM*)' [-Wmissing-declarations]
+   35 | int Asm_Ctor (ASM*)
+      |     ^~~~~~~~
+asm.cpp: In function 'int Asm_Ctor(ASM*)':
+asm.cpp:39:1: warning: no return statement in function returning non-void [-Wreturn-type]
+   39 | }
+      | ^
+asm.cpp: At global scope:
+asm.cpp:41:5: warning: no previous declaration for 'int Processing_Command(ASM*)' [-Wmissing-declarations]
+   41 | int Processing_Command (ASM* data_asm)
+      |     ^~~~~~~~~~~~~~~~~~
+asm.cpp: In function 'int Processing_Command(ASM*)':
+asm.cpp:44:1: warning: no return statement in function returning non-void [-Wreturn-type]
+   44 | }
+      | ^
+asm.cpp:41:30: warning: unused parameter 'data_asm' [-Wunused-parameter]
+   41 | int Processing_Command (ASM* data_asm)
+      |                         ~~~~~^~~~~~~~
+asm.cpp: At global scope:
+asm.cpp:46:5: warning: no previous declaration for 'int Asm_Dtor()' [-Wmissing-declarations]
+   46 | int Asm_Dtor ()
+      |     ^~~~~~~~
+asm.cpp: In function 'int Asm_Dtor()':
+asm.cpp:49:1: warning: no return statement in function returning non-void [-Wreturn-type]
+   49 | }
+      | ^
+asm.cpp: In function 'int Asm_Ctor(ASM*)':
+asm.cpp:35:5: warning: function might be candidate for attribute 'noreturn' [-Wsuggest-attribute=noreturn]
+   35 | int Asm_Ctor (ASM*)
+      |     ^~~~~~~~
+asm.cpp: In function 'int Processing_Command(ASM*)':
+asm.cpp:41:5: warning: function might be candidate for attribute 'noreturn' [-Wsuggest-attribute=noreturn]
+   41 | int Processing_Command (ASM* data_asm)
+      |     ^~~~~~~~~~~~~~~~~~
+asm.cpp: In function 'int Asm_Dtor()':
+asm.cpp:46:5: warning: function might be candidate for attribute 'noreturn' [-Wsuggest-attribute=noreturn]
+   46 | int Asm_Dtor ()
+      |     ^~~~~~~~
+D:/Приложения/compile/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: C:\Users\Admin\AppData\Local\Temp\ccOipEDU.o:asm.cpp:(.text+0x1d6b3): undefined reference to `file_size(char const*)'
+D:/Приложения/compile/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: C:\Users\Admin\AppData\Local\Temp\ccOipEDU.o:asm.cpp:(.text+0x1d6c0): undefined reference to `Check_fsize(long)'
+D:/Приложения/compile/MinGW/bin/../lib/gcc/x86_64-w64-mingw32/13.2.0/../../../../x86_64-w64-mingw32/bin/ld.exe: C:\Users\Admin\AppData\Local\Temp\ccOipEDU.o:asm.cpp:(.text+0x1d6d8): undefined reference to `Read_File(ONEGIN*)'
+collect2.exe: error: ld returned 1 exit status

@@ -1,45 +1,49 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "..\SuperLibs\TXLib.h"
 #include "Stack_for_proc\Common.h"
-#include "asm.h"
+#include "Asm.h"
+#include "Onegin_for_proc\Processing.h"
+#include "Onegin_for_proc\General.h"
+#include "Onegin_for_proc\Print.h"
 
 int main (int argc, char* argv[])
-{
+{   
     ASM data_asm = {};
+    ONEGIN str_data = {};
 
     Check_argc (argc);
+    str_data.name = argv[1];
+    str_data.fsize = file_size (argv[1]);
+    Check_fsize (str_data.fsize);
+
     data_asm.nm_orig_f = argv[1];
- 
-    Open_file (data_asm.nm_orig_f);
 
-
-    Close_file (data_asm.orig_file);
+    Read_File (&str_data); 
+    DBG_Print (&str_data);
+                                                                                                    
+    //Processing_Command (&data_asm);
     return 0;
 }
 //==================================================================================================
-int Open_file (const char* name)
+/*int Asm_Ctor (ASM*)
 {
-    FILE* fp = fopen (name, "rw+");
-    if (fp == NULL)
-    {
-        fprintf (stderr, "Didn't  open the file \"%s\"\n", name);
-        return FILE_NULL;
-    }
+    //el_t* mem_cmd = (el_t*) calloc ();
+    //mem_cmd =  
 }
 //==================================================================================================
-int Close_file (FILE* orig_file)
+int Processing_Command (ASM* data_asm)
 {
-    fclose (orig_file);
+    
+}
+//==================================================================================================
+int Asm_Dtor ()
+{
+
+}
+//==================================================================================================
+*/
+int Dump ()
+{
+
+
     return NO_ERROR_;
 }
-//==================================================================================================
-void Check_argc (int argc)
-{
-    if (argc != 2)
-    {
-        fprintf (stderr, "Error: the file name was not received");
-        exit(1);
-    }
-}
-//==================================================================================================
-in

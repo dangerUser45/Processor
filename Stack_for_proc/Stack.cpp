@@ -129,6 +129,6 @@ int Stack_free (void* ptr)
         free (*Data);
         *Data = NULL;
     }
-    return NO_ERROR;
+    return NO_ERROR_;
 }
 //==================================================================================================
