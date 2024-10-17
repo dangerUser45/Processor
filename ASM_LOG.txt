@@ -1,57 +1,107 @@
-READ_file: addr buffer_adr = 2158201691712
+READ_file: addr buffer_adr = 2237767441984
 =============================================================================
-Symbol = <p>, his addr = 2158201691712
-Symbol = <u>, his addr = 2158201691713
-Symbol = <s>, his addr = 2158201691714
-Symbol = <h>, his addr = 2158201691715
-Symbol = < >, his addr = 2158201691716
-Symbol = <1>, his addr = 2158201691717
-Symbol = <0>, his addr = 2158201691718
-symbol = <\0>, addr = 2158201691719
-symbol = <\n>, addr = 2158201691720
-Symbol = <p>, his addr = 2158201691721
-Symbol = <o>, his addr = 2158201691722
-Symbol = <p>, his addr = 2158201691723
-Symbol = < >, his addr = 2158201691724
-Symbol = <2>, his addr = 2158201691725
-Symbol = <0>, his addr = 2158201691726
-symbol = <\0>, addr = 2158201691727
-symbol = <\n>, addr = 2158201691728
-Symbol = <a>, his addr = 2158201691729
-Symbol = <d>, his addr = 2158201691730
-Symbol = <d>, his addr = 2158201691731
-symbol = <\0>, addr = 2158201691732
-symbol = <\n>, addr = 2158201691733
-Symbol = <m>, his addr = 2158201691734
-Symbol = <u>, his addr = 2158201691735
-Symbol = <l>, his addr = 2158201691736
-symbol = <\n>, addr = 2158201691737
+Symbol = <p>, his addr = 2237767441984
+Symbol = <u>, his addr = 2237767441985
+Symbol = <s>, his addr = 2237767441986
+Symbol = <h>, his addr = 2237767441987
+Symbol = < >, his addr = 2237767441988
+Symbol = <1>, his addr = 2237767441989
+Symbol = <0>, his addr = 2237767441990
+symbol = <\r>, addr = 2237767441991
+symbol = <\n>, addr = 2237767441992
+Symbol = <p>, his addr = 2237767441993
+Symbol = <o>, his addr = 2237767441994
+Symbol = <p>, his addr = 2237767441995
+Symbol = < >, his addr = 2237767441996
+Symbol = <2>, his addr = 2237767441997
+Symbol = <0>, his addr = 2237767441998
+symbol = <\r>, addr = 2237767441999
+symbol = <\n>, addr = 2237767442000
+Symbol = <a>, his addr = 2237767442001
+Symbol = <d>, his addr = 2237767442002
+Symbol = <d>, his addr = 2237767442003
+symbol = <\r>, addr = 2237767442004
+symbol = <\n>, addr = 2237767442005
+Symbol = <m>, his addr = 2237767442006
+Symbol = <u>, his addr = 2237767442007
+Symbol = <l>, his addr = 2237767442008
+symbol = <\r>, addr = 2237767442009
+symbol = <\n>, addr = 2237767442010
+symbol = <\0>, addr = 2237767442011
 =============================================================================
 =============================================================================
-Symbol = <p>, his addr = 2158201691712
-Symbol = <u>, his addr = 2158201691713
-Symbol = <s>, his addr = 2158201691714
-Symbol = <h>, his addr = 2158201691715
-Symbol = < >, his addr = 2158201691716
-Symbol = <1>, his addr = 2158201691717
-Symbol = <0>, his addr = 2158201691718
-symbol = <\0>, addr = 2158201691719
-symbol = <\n>, addr = 2158201691720
-Symbol = <p>, his addr = 2158201691721
-Symbol = <o>, his addr = 2158201691722
-Symbol = <p>, his addr = 2158201691723
-Symbol = < >, his addr = 2158201691724
-Symbol = <2>, his addr = 2158201691725
-Symbol = <0>, his addr = 2158201691726
-symbol = <\0>, addr = 2158201691727
-symbol = <\n>, addr = 2158201691728
-Symbol = <a>, his addr = 2158201691729
-Symbol = <d>, his addr = 2158201691730
-Symbol = <d>, his addr = 2158201691731
-symbol = <\0>, addr = 2158201691732
-symbol = <\n>, addr = 2158201691733
-Symbol = <m>, his addr = 2158201691734
-Symbol = <u>, his addr = 2158201691735
-Symbol = <l>, his addr = 2158201691736
-symbol = <\n>, addr = 2158201691737
+Symbol = <p>, his addr = 2237767441984
+Symbol = <u>, his addr = 2237767441985
+Symbol = <s>, his addr = 2237767441986
+Symbol = <h>, his addr = 2237767441987
+Symbol = < >, his addr = 2237767441988
+Symbol = <1>, his addr = 2237767441989
+Symbol = <0>, his addr = 2237767441990
+symbol = <\0>, addr = 2237767441991
+symbol = <\n>, addr = 2237767441992
+Symbol = <p>, his addr = 2237767441993
+Symbol = <o>, his addr = 2237767441994
+Symbol = <p>, his addr = 2237767441995
+Symbol = < >, his addr = 2237767441996
+Symbol = <2>, his addr = 2237767441997
+Symbol = <0>, his addr = 2237767441998
+symbol = <\0>, addr = 2237767441999
+symbol = <\n>, addr = 2237767442000
+Symbol = <a>, his addr = 2237767442001
+Symbol = <d>, his addr = 2237767442002
+Symbol = <d>, his addr = 2237767442003
+symbol = <\0>, addr = 2237767442004
+symbol = <\n>, addr = 2237767442005
+Symbol = <m>, his addr = 2237767442006
+Symbol = <u>, his addr = 2237767442007
+Symbol = <l>, his addr = 2237767442008
+symbol = <\0>, addr = 2237767442009
+symbol = <\n>, addr = 2237767442010
+symbol = <\n>, addr = 2237767442011
+=============================================================================
+  ADDR_STR str_data = 2237767442032
+ADDR_STR: adrr begin str = 2237767441984
+ADDR_STR: adrr end str = 2237767441992
+ADDR_STR: adrr begin str = 2237767441993
+ADDR_STR: adrr end str = 2237767442000
+ADDR_STR: adrr begin str = 2237767442001
+ADDR_STR: adrr end str = 2237767442005
+ADDR_STR: adrr begin str = 2237767442006
+ADDR_STR: adrr end str = 2237767442010
+addr buffer_addr = 2237767442010
+buffer_addr[file->fsize-1] = <	>
+buffer_addr[file->fsize-1] = <	>
+file->buffer_addr[file->fsize-1] = <
+>
+file->buffer_addr[file->fsize] = <
+>
+=============================================================================
+Symbol = <p>, his addr = 2237767441984
+Symbol = <u>, his addr = 2237767441985
+Symbol = <s>, his addr = 2237767441986
+Symbol = <h>, his addr = 2237767441987
+Symbol = < >, his addr = 2237767441988
+Symbol = <1>, his addr = 2237767441989
+Symbol = <0>, his addr = 2237767441990
+symbol = <\0>, addr = 2237767441991
+symbol = <\n>, addr = 2237767441992
+Symbol = <p>, his addr = 2237767441993
+Symbol = <o>, his addr = 2237767441994
+Symbol = <p>, his addr = 2237767441995
+Symbol = < >, his addr = 2237767441996
+Symbol = <2>, his addr = 2237767441997
+Symbol = <0>, his addr = 2237767441998
+symbol = <\0>, addr = 2237767441999
+symbol = <\n>, addr = 2237767442000
+Symbol = <a>, his addr = 2237767442001
+Symbol = <d>, his addr = 2237767442002
+Symbol = <d>, his addr = 2237767442003
+symbol = <\0>, addr = 2237767442004
+symbol = <\n>, addr = 2237767442005
+Symbol = <m>, his addr = 2237767442006
+Symbol = <u>, his addr = 2237767442007
+Symbol = <l>, his addr = 2237767442008
+symbol = <\0>, addr = 2237767442009
+symbol = <\n>, addr = 2237767442010
+symbol = <\n>, addr = 2237767442011
 =============================================================================

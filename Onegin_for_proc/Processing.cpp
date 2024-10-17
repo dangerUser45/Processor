@@ -112,10 +112,10 @@ void Address_String (ONEGIN* file)
 
     dbg fprintf(Log_File, "ADDR_STR: adrr end str = %llu\n", str_data[n_string-1].end_addr);
     dbg fprintf(Log_File, "addr buffer_addr = %llu\n", buffer_addr);
-    dbg fprintf(Log_File, "buffer_addr[file->fsize-1] = <%d>\n", buffer_addr[file->fsize-1]);
-    dbg fprintf(Log_File, "buffer_addr[file->fsize-1] = <%d>\n", buffer_addr[file->fsize-1]);
-    dbg fprintf(Log_File, "file->buffer_addr[file->fsize-1] = <%d>\n", file->buffer_addr[file->fsize-1]);
-    dbg fprintf(Log_File, "file->buffer_addr[file->fsize] = <%d>\n",   file->buffer_addr[file->fsize]);
+    dbg fprintf(Log_File, "buffer_addr[file->fsize-1] = <%c>\n", buffer_addr[file->fsize-1]);
+    dbg fprintf(Log_File, "buffer_addr[file->fsize-1] = <%c>\n", buffer_addr[file->fsize-1]);
+    dbg fprintf(Log_File, "file->buffer_addr[file->fsize-1] = <%c>\n", file->buffer_addr[file->fsize-1]);
+    dbg fprintf(Log_File, "file->buffer_addr[file->fsize] = <%c>\n",   file->buffer_addr[file->fsize]);
 
 }
 //=============================================================================
