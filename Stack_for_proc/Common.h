@@ -5,9 +5,9 @@
 #include <stdlib.h>
 #include <assert.h>
 
-#define DEBUG 1
+#define STACK_DEBUG 1
 
-#if  (DEBUG == 1)
+#if  (STACK_DEBUG == 1)
     #define ONDEBUG( ... ) __VA_ARGS__
     #define STACK_CTOR(Data, capacity) Stack_Ctor (Data, capacity, #Data, __FILE__, __LINE__)
     #define CHECK(code1, code2) { int error = Verificator (Data); Decoder_error (Data, error, __LINE__, code2);  if (error != 0) {code1;}}

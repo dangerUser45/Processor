@@ -1,4 +1,6 @@
-#pragma once
+struct ASM;
+int Processing_Command (ASM* data_asm);
+int Dump (ASM* str_data);
 
 struct ASM  
 {
@@ -15,4 +17,11 @@ struct label
 
 };
 
+struct ASM_DBG
+{
+    const char* name_log_file;
+};
+
 typedef int el_t;
+
+

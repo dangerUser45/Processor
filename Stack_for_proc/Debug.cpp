@@ -3,25 +3,24 @@
 
 FILE* Log_File = 0;
 
-int Create_file ()
+int Create_file (const char* name_of_file)
 {
-    const char* StackLogFile = "StackLog.txt";
 
-    if ((Log_File = fopen(StackLogFile, "w+")) == NULL)
+    if ((Log_File = fopen (name_of_file, "w+")) == NULL)
     {
-        fprintf (stdout, "Не удается открыть файл %s\n", StackLogFile) ;
+        fprintf (stdout, "Не удается открыть файл %s\n", name_of_file);
         return 0;
     }
     setvbuf (Log_File, 0, 0, _IONBF);
     
-    return NO_ERROR;/* code_error */
+    return NO_ERROR_;
 }
 
-int Close_file ()
+int Close_file (FILE* fp)
 {
-    fclose (Log_File);
-    Log_File = NULL;
-    return NO_ERROR;
+    fclose (fp);
+    fp = NULL;
+    return NO_ERROR_;
 }
 //==================================================================================================
 int Dump (stack_t* Data)

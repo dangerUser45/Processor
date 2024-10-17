@@ -1,4 +1,6 @@
 struct ONEGIN;
-void Print_text (ONEGIN* file, STRING* str_data);
-void Print_all_version (ONEGIN file);
+struct ASM_DBG;
+
 void DBG_Print (ONEGIN* file);
+
+extern FILE* Log_File;

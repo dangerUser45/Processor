@@ -1,0 +1,57 @@
+READ_file: addr buffer_adr = 2158201691712
+=============================================================================
+Symbol = <p>, his addr = 2158201691712
+Symbol = <u>, his addr = 2158201691713
+Symbol = <s>, his addr = 2158201691714
+Symbol = <h>, his addr = 2158201691715
+Symbol = < >, his addr = 2158201691716
+Symbol = <1>, his addr = 2158201691717
+Symbol = <0>, his addr = 2158201691718
+symbol = <\0>, addr = 2158201691719
+symbol = <\n>, addr = 2158201691720
+Symbol = <p>, his addr = 2158201691721
+Symbol = <o>, his addr = 2158201691722
+Symbol = <p>, his addr = 2158201691723
+Symbol = < >, his addr = 2158201691724
+Symbol = <2>, his addr = 2158201691725
+Symbol = <0>, his addr = 2158201691726
+symbol = <\0>, addr = 2158201691727
+symbol = <\n>, addr = 2158201691728
+Symbol = <a>, his addr = 2158201691729
+Symbol = <d>, his addr = 2158201691730
+Symbol = <d>, his addr = 2158201691731
+symbol = <\0>, addr = 2158201691732
+symbol = <\n>, addr = 2158201691733
+Symbol = <m>, his addr = 2158201691734
+Symbol = <u>, his addr = 2158201691735
+Symbol = <l>, his addr = 2158201691736
+symbol = <\n>, addr = 2158201691737
+=============================================================================
+=============================================================================
+Symbol = <p>, his addr = 2158201691712
+Symbol = <u>, his addr = 2158201691713
+Symbol = <s>, his addr = 2158201691714
+Symbol = <h>, his addr = 2158201691715
+Symbol = < >, his addr = 2158201691716
+Symbol = <1>, his addr = 2158201691717
+Symbol = <0>, his addr = 2158201691718
+symbol = <\0>, addr = 2158201691719
+symbol = <\n>, addr = 2158201691720
+Symbol = <p>, his addr = 2158201691721
+Symbol = <o>, his addr = 2158201691722
+Symbol = <p>, his addr = 2158201691723
+Symbol = < >, his addr = 2158201691724
+Symbol = <2>, his addr = 2158201691725
+Symbol = <0>, his addr = 2158201691726
+symbol = <\0>, addr = 2158201691727
+symbol = <\n>, addr = 2158201691728
+Symbol = <a>, his addr = 2158201691729
+Symbol = <d>, his addr = 2158201691730
+Symbol = <d>, his addr = 2158201691731
+symbol = <\0>, addr = 2158201691732
+symbol = <\n>, addr = 2158201691733
+Symbol = <m>, his addr = 2158201691734
+Symbol = <u>, his addr = 2158201691735
+Symbol = <l>, his addr = 2158201691736
+symbol = <\n>, addr = 2158201691737
+=============================================================================

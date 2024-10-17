@@ -1,6 +1,6 @@
 #pragma once
 
-//#define __DBACK
+#define __DBACK
 
 #ifdef __DBACK
     #define  __danya_back( ... )  __VA_ARGS__
@@ -18,9 +18,9 @@
 #include <ctype.h>
 #include <locale.h>
 
-//#define DEBUG
+#define ONEGIN_DEBUG
 
-#ifdef DEBUG
+#ifdef ONEGIN_DEBUG
 #define dbg        if (1)
 #define DBG(...)   __VA_ARGS__
 #else

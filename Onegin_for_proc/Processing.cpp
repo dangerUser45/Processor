@@ -1,5 +1,6 @@
-#include "General.h"
-#include "Processing.h"
+#include "Onegin_General.h"
+#include "Onegin_Processing.h"
+#include "Print.h"
 
 void File_Common (ONEGIN* file)
 {
@@ -40,7 +41,7 @@ void Strings_Number (ONEGIN* file)
             string_quantity++;
         buffer_addr++;
     }
-    __danya_back(DBG_Print (file);)
+    __danya_back( DBG_Print (file);)
     file->string_quantity = string_quantity;
 }
 //=============================================================================
@@ -65,7 +66,7 @@ void Read_File (ONEGIN* file)
     char* buffer_addr = file->buffer_addr = (char*) calloc(fsize + 1 , sizeof(char));
 
     fread(buffer_addr, sizeof(char), fsize + 1, fp);
-    dbg printf("READ_file: addr buffer_adr = %llu\n", buffer_addr);
+    dbg fprintf(Log_File, "READ_file: addr buffer_adr = %llu\n", buffer_addr);
 
     fclose (fp);
     assert(fp);
@@ -90,8 +91,8 @@ void Address_String (ONEGIN* file)
     long fsize = file->fsize;
     str_data[0].str_addr = buffer_addr;
 
-    dbg printf("  ADDR_STR str_data = %llu\n", str_data);
-    dbg printf("ADDR_STR: adrr begin str = %llu\n", str_data[0].str_addr);
+    dbg fprintf(Log_File, "  ADDR_STR str_data = %llu\n", str_data);
+    dbg fprintf(Log_File, "ADDR_STR: adrr begin str = %llu\n", str_data[0].str_addr);
 
     for (int i = 0; i < fsize - 1; i++)
     {
@@ -100,8 +101,8 @@ void Address_String (ONEGIN* file)
             str_data[n_string-1].end_addr = buffer_addr;
             str_data[n_string].str_addr = buffer_addr+1;
 
-            dbg printf("ADDR_STR: adrr end str = %llu\n", str_data[n_string-1].end_addr);
-            dbg printf("ADDR_STR: adrr begin str = %llu\n", str_data[n_string].str_addr);
+            dbg fprintf(Log_File, "ADDR_STR: adrr end str = %llu\n", str_data[n_string-1].end_addr);
+            dbg fprintf(Log_File, "ADDR_STR: adrr begin str = %llu\n", str_data[n_string].str_addr);
 
             n_string++;
         }
@@ -109,12 +110,12 @@ void Address_String (ONEGIN* file)
     }
     str_data[n_string-1].end_addr = buffer_addr;
 
-    dbg printf("addr buffer_addr = %llu\n", buffer_addr);
-    dbg printf("buffer_addr[file->fsize-1] = <%d>\n", buffer_addr[file->fsize-1]);
-    dbg printf("buffer_addr[file->fsize-1] = <%d>\n", buffer_addr[file->fsize-1]);
-    dbg printf("file->buffer_addr[file->fsize-1] = <%d>\n", file->buffer_addr[file->fsize-1]);
-    dbg printf("file->buffer_addr[file->fsize] = <%d>\n",   file->buffer_addr[file->fsize]);
-    dbg printf("ADDR_STR: adrr end str = %llu\n", str_data[n_string-1].end_addr);
+    dbg fprintf(Log_File, "ADDR_STR: adrr end str = %llu\n", str_data[n_string-1].end_addr);
+    dbg fprintf(Log_File, "addr buffer_addr = %llu\n", buffer_addr);
+    dbg fprintf(Log_File, "buffer_addr[file->fsize-1] = <%d>\n", buffer_addr[file->fsize-1]);
+    dbg fprintf(Log_File, "buffer_addr[file->fsize-1] = <%d>\n", buffer_addr[file->fsize-1]);
+    dbg fprintf(Log_File, "file->buffer_addr[file->fsize-1] = <%d>\n", file->buffer_addr[file->fsize-1]);
+    dbg fprintf(Log_File, "file->buffer_addr[file->fsize] = <%d>\n",   file->buffer_addr[file->fsize]);
 
 }
 //=============================================================================
