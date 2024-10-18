@@ -1,0 +1,11 @@
+asm.cpp: In function 'int Processing_Command(ASM*, STRING*, long int)':
+asm.cpp:54:13: warning: suggest braces around empty body in an 'if' statement [-Wempty-body]
+   54 |             ;
+      |             ^
+asm.cpp:38:30: warning: unused parameter 'data_asm' [-Wunused-parameter]
+   38 | int Processing_Command (ASM* data_asm, STRING* str_data, long size)
+      |                         ~~~~~^~~~~~~~
+asm.cpp: In function 'int Dump(ASM*)':
+asm.cpp:109:16: warning: unused parameter 'str_data' [-Wunused-parameter]
+  109 | int Dump (ASM* str_data)
+      |           ~~~~~^~~~~~~~

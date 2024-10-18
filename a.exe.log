@@ -552,3 +552,106 @@ Run file:	X:\a.exe
 Directory:	X:\
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: X:\a.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE2382D2F1. Попытка прочесть данные по адресу 0x0000000000000070 в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF60ACA68D0 (64-bit), Flags: Cmdre0, Thread: 0x1B90 (Main), errno: 9 (Bad file descriptor), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Oct 18 2024 13:17:28, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Oct 18 2024 13:20:11
+
+Run file:	X:\a.exe
+Directory:	X:\
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: X:\a.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE2382D2F1. Попытка прочесть данные по адресу 0x0000000000000070 в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF60ACA68D0 (64-bit), Flags: Cmdre0, Thread: 0x1B90 (Main), errno: 9 (Bad file descriptor), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Oct 18 2024 13:17:28, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Oct 18 2024 13:20:11
+
+Run file:	X:\a.exe
+Directory:	X:\
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: X:\a.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF7345E68D0 (64-bit), Flags: Cmdre0, Thread: 0x25C0 (Main), errno: 22 (Invalid argument), _doserrno: 123 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Oct 18 2024 15:19:26, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Oct 18 2024 15:19:37
+
+Run file:	X:\a.exe
+Directory:	X:\
+
+--------------------------------------------------
