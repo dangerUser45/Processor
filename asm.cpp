@@ -31,6 +31,7 @@ int main (int argc, char* argv[])
 
     Asm_Ctor (&data_asm, onegin_data.string_quantity);                                                                                            
     Processing_Command (&data_asm, onegin_data.str_data, onegin_data.string_quantity);
+    Dump (&data_asm, &onegin_data);
 
     Close_file (Log_File);
     Asm_Dtor (&data_asm.mem_cmd);
@@ -44,117 +45,119 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
     el_t temp_value = 0;
 
     long i = 0;
+    long line = 0;
     
-    while (i < size)
-    {
-        sscanf (str_data[i].str_addr, "%s", temp_string);
-        sscanf (str_data[i].str_addr, "%lf", &temp_value);
+    while (line < size)
+    {   
+        int cnt_rd_sym= 0;
 
-        fprintf (Log_File, "Temp_string = %s\n", temp_string);
+        sscanf (str_data[line].str_addr, "%s%n", temp_string, &cnt_rd_sym);
+        sscanf (str_data[line].str_addr + cnt_rd_sym, "%lf", &temp_value);
+        ++line;
+
+        fprintf (Log_File, "%ld)Temp_string = %s\n",line, temp_string);
         fprintf (Log_File, "Temp_value = %lf\n", temp_value);
 
         if (strcmp (temp_string, "hlt") == 0)
         {
-            mem_cmd[i] = (el_t) HLT;
-            mem_cmd[i+1] = (el_t) temp_value;
+            mem_cmd[i++] = (el_t) HLT;
+        }
+
+        if (strcmp (temp_string, "push") == 0)
+        {
+            mem_cmd[i++] = (el_t) PUSH;
+            mem_cmd[i++ ] = (el_t) temp_value;
+        }
+
+        if (strcmp (temp_string, "pop") == 0)
+        {
+            mem_cmd[i++] = (el_t) POP;
+            mem_cmd[i++] = (el_t) temp_value;
+        }
+
+        if (strcmp (temp_string, "add") == 0)
+        {
+            mem_cmd[i++] = (el_t) ADD;
             //записать в массив
         }
 
-        else if (strcmp (temp_string, "push") == 0)
+        if (strcmp (temp_string, "mul") == 0)
         {
-            mem_cmd[i] = (el_t) PUSH;
-            mem_cmd[i+1] = (el_t) temp_value;
-            //записать в массив
-        }
-
-        else if (strcmp (temp_string, "pop") == 0)
-        {
-            mem_cmd[i] = (el_t) POP;
-            mem_cmd[i+1] = (el_t) temp_value;
-            //записать в массив
-        }
-
-        else if (strcmp (temp_string, "add") == 0)
-        {
-            mem_cmd[i] = (el_t) ADD;
-            mem_cmd[i+1] = (el_t) temp_value;
-            //записать в массив
-        }
-
-        else if (strcmp (temp_string, "mul") == 0)
-        {
-            mem_cmd[i] = (el_t) MUL;
-            mem_cmd[i+1] = (el_t) temp_value;
+            mem_cmd[i++] = (el_t) MUL;   
             //записать в массив
         }
         
-        else if (strcmp (temp_string, "div") == 0)
+        if (strcmp (temp_string, "div") == 0)
         {
-            mem_cmd[i] = (el_t) DIV;
-            mem_cmd[i+1] = (el_t) temp_value;
+            mem_cmd[i++] = (el_t) DIV;   
             //записать в массив
         }
-        else if (strcmp (temp_string, "jmp") == 0)
+        if (strcmp (temp_string, "jmp") == 0)
         {
-            mem_cmd[i] = (el_t) JMP;
-            mem_cmd[i+1] = (el_t) temp_value;
+            mem_cmd[i++] = (el_t) JMP;
+            mem_cmd[i++] = (el_t) temp_value;
+             
         }
 
-        else if (strcmp (temp_string, "ja") == 0)
+        if (strcmp (temp_string, "ja") == 0)
         {
-            mem_cmd[i] = (el_t) JA;
-            mem_cmd[i+1] = (el_t) temp_value;
-            //записать в массив
-        }
-
-        else if (strcmp (temp_string, "jb") == 0)
-        {
-            mem_cmd[i] = (el_t) JB;
-            mem_cmd[i+1] = (el_t) temp_value;
+            mem_cmd[i++] = (el_t) JA;
+            mem_cmd[i++] = (el_t) temp_value;
+             
             //записать в массив
         }
 
-        else if (strcmp (temp_string, "jae") == 0)
+        if (strcmp (temp_string, "jb") == 0)
         {
-            mem_cmd[i] = (el_t) JAE;
-            mem_cmd[i+1] = (el_t) temp_value;
+            mem_cmd[i++] = (el_t) JB;
+            mem_cmd[i++]  = (el_t) temp_value;
+             
             //записать в массив
         }
 
-        else if (strcmp (temp_string, "jbe") == 0)
+        if (strcmp (temp_string, "jae") == 0)
         {
-            mem_cmd[i] = (el_t) JBE;
-            mem_cmd[i+1] = (el_t) temp_value;
+            mem_cmd[i++] = (el_t) JAE;
+            mem_cmd[i++] = (el_t) temp_value;
+             
             //записать в массив
         }
 
-        else if (strcmp (temp_string, "je") == 0)
+        if (strcmp (temp_string, "jbe") == 0)
         {
-            mem_cmd[i] = (el_t) JE;
-            mem_cmd[i+1] = (el_t) temp_value;
+            mem_cmd[i++] = (el_t) JBE;
+            mem_cmd[i++ ] = (el_t) temp_value;
+             
             //записать в массив
         }
 
-        else if (strcmp (temp_string, "jhe") == 0)
+        if (strcmp (temp_string, "je") == 0)
         {
-            mem_cmd[i] = (el_t) JHE;
-            mem_cmd[i+1] = (el_t) temp_value;
-            //записать в масси
+            mem_cmd[i++] = (el_t) JE;
+            mem_cmd[i++] = (el_t) temp_value;
+             
+            //записать в массив
         }
 
-        fprintf (Log_File, "mem_cmd[i] = %lf", mem_cmd[i]);
+        if (strcmp (temp_string, "jhe") == 0)
+        {
+            mem_cmd[i++] = (el_t) JHE;
+            mem_cmd[i++] = (el_t) temp_value;
+        }
     }
     return NO_ERROR_; 
 }
 //==================================================================================================
 int Asm_Ctor (ASM* data_asm, long size)
 {
-    el_t* mem_cmd = (el_t*) calloc (2* size, sizeof (el_t));
+    long size_mem_cmd = 4 * size;
+    el_t* mem_cmd = (el_t*) calloc (size_mem_cmd, sizeof (el_t));
 
     if (mem_cmd == NULL) 
     return 0;
 
     data_asm -> mem_cmd = mem_cmd;
+    data_asm -> size_mem_cmd = size_mem_cmd;
 
     return NO_ERROR_; 
 }
@@ -169,9 +172,19 @@ int Asm_Dtor (void* pointer)
     return NO_ERROR_;
 }
 //==================================================================================================
-int Dump (ASM* str_data)
+int Dump (ASM* str_data, ONEGIN* data)
 {
+    fprintf (Log_File, "======================================================================================\n");
+    fprintf (Log_File, "Number  ");
+    for (int i = 0; i < str_data -> size_mem_cmd; ++i)
+        fprintf (Log_File, "%05d  ", i);
     
+    fprintf (Log_File, "\nValue   ");
+    for (int i = 0; i < str_data -> size_mem_cmd; ++i)
+    {
+        fprintf (Log_File, "%05.2lf  ", str_data -> mem_cmd[i]);
+    }
+    fprintf (Log_File, "\n======================================================================================\n");
 
     return NO_ERROR_;
 }

@@ -1,0 +1,148 @@
+READ_file: addr buffer_adr = 1582382800560
+=============================================================================
+Symbol = <p>, his addr = 1582382800560
+Symbol = <u>, his addr = 1582382800561
+Symbol = <s>, his addr = 1582382800562
+Symbol = <h>, his addr = 1582382800563
+Symbol = < >, his addr = 1582382800564
+Symbol = <1>, his addr = 1582382800565
+Symbol = <0>, his addr = 1582382800566
+symbol = <\r>, addr = 1582382800567
+symbol = <\n>, addr = 1582382800568
+Symbol = <p>, his addr = 1582382800569
+Symbol = <o>, his addr = 1582382800570
+Symbol = <p>, his addr = 1582382800571
+symbol = <\r>, addr = 1582382800572
+symbol = <\n>, addr = 1582382800573
+Symbol = <a>, his addr = 1582382800574
+Symbol = <d>, his addr = 1582382800575
+Symbol = <d>, his addr = 1582382800576
+symbol = <\r>, addr = 1582382800577
+symbol = <\n>, addr = 1582382800578
+Symbol = <m>, his addr = 1582382800579
+Symbol = <u>, his addr = 1582382800580
+Symbol = <l>, his addr = 1582382800581
+symbol = <\r>, addr = 1582382800582
+symbol = <\n>, addr = 1582382800583
+Symbol = <o>, his addr = 1582382800584
+Symbol = <u>, his addr = 1582382800585
+Symbol = <t>, his addr = 1582382800586
+symbol = <\r>, addr = 1582382800587
+symbol = <\n>, addr = 1582382800588
+Symbol = <h>, his addr = 1582382800589
+Symbol = <l>, his addr = 1582382800590
+Symbol = <t>, his addr = 1582382800591
+symbol = <\r>, addr = 1582382800592
+symbol = <\n>, addr = 1582382800593
+symbol = <\0>, addr = 1582382800594
+=============================================================================
+=============================================================================
+Symbol = <p>, his addr = 1582382800560
+Symbol = <u>, his addr = 1582382800561
+Symbol = <s>, his addr = 1582382800562
+Symbol = <h>, his addr = 1582382800563
+Symbol = < >, his addr = 1582382800564
+Symbol = <1>, his addr = 1582382800565
+Symbol = <0>, his addr = 1582382800566
+symbol = <\0>, addr = 1582382800567
+symbol = <\n>, addr = 1582382800568
+Symbol = <p>, his addr = 1582382800569
+Symbol = <o>, his addr = 1582382800570
+Symbol = <p>, his addr = 1582382800571
+symbol = <\0>, addr = 1582382800572
+symbol = <\n>, addr = 1582382800573
+Symbol = <a>, his addr = 1582382800574
+Symbol = <d>, his addr = 1582382800575
+Symbol = <d>, his addr = 1582382800576
+symbol = <\0>, addr = 1582382800577
+symbol = <\n>, addr = 1582382800578
+Symbol = <m>, his addr = 1582382800579
+Symbol = <u>, his addr = 1582382800580
+Symbol = <l>, his addr = 1582382800581
+symbol = <\0>, addr = 1582382800582
+symbol = <\n>, addr = 1582382800583
+Symbol = <o>, his addr = 1582382800584
+Symbol = <u>, his addr = 1582382800585
+Symbol = <t>, his addr = 1582382800586
+symbol = <\0>, addr = 1582382800587
+symbol = <\n>, addr = 1582382800588
+Symbol = <h>, his addr = 1582382800589
+Symbol = <l>, his addr = 1582382800590
+Symbol = <t>, his addr = 1582382800591
+symbol = <\0>, addr = 1582382800592
+symbol = <\n>, addr = 1582382800593
+symbol = <\n>, addr = 1582382800594
+=============================================================================
+  ADDR_STR str_data = 1582382800608
+ADDR_STR: adrr begin str = 1582382800560
+ADDR_STR: adrr end str = 1582382800568
+ADDR_STR: adrr begin str = 1582382800569
+ADDR_STR: adrr end str = 1582382800573
+ADDR_STR: adrr begin str = 1582382800574
+ADDR_STR: adrr end str = 1582382800578
+ADDR_STR: adrr begin str = 1582382800579
+ADDR_STR: adrr end str = 1582382800583
+ADDR_STR: adrr begin str = 1582382800584
+ADDR_STR: adrr end str = 1582382800588
+ADDR_STR: adrr begin str = 1582382800589
+ADDR_STR: adrr end str = 1582382800593
+addr buffer_addr = 1582382800593
+buffer_addr[file->fsize-1] = <]>
+buffer_addr[file->fsize-1] = <]>
+file->buffer_addr[file->fsize-1] = <
+>
+file->buffer_addr[file->fsize] = <
+>
+=============================================================================
+Symbol = <p>, his addr = 1582382800560
+Symbol = <u>, his addr = 1582382800561
+Symbol = <s>, his addr = 1582382800562
+Symbol = <h>, his addr = 1582382800563
+Symbol = < >, his addr = 1582382800564
+Symbol = <1>, his addr = 1582382800565
+Symbol = <0>, his addr = 1582382800566
+symbol = <\0>, addr = 1582382800567
+symbol = <\n>, addr = 1582382800568
+Symbol = <p>, his addr = 1582382800569
+Symbol = <o>, his addr = 1582382800570
+Symbol = <p>, his addr = 1582382800571
+symbol = <\0>, addr = 1582382800572
+symbol = <\n>, addr = 1582382800573
+Symbol = <a>, his addr = 1582382800574
+Symbol = <d>, his addr = 1582382800575
+Symbol = <d>, his addr = 1582382800576
+symbol = <\0>, addr = 1582382800577
+symbol = <\n>, addr = 1582382800578
+Symbol = <m>, his addr = 1582382800579
+Symbol = <u>, his addr = 1582382800580
+Symbol = <l>, his addr = 1582382800581
+symbol = <\0>, addr = 1582382800582
+symbol = <\n>, addr = 1582382800583
+Symbol = <o>, his addr = 1582382800584
+Symbol = <u>, his addr = 1582382800585
+Symbol = <t>, his addr = 1582382800586
+symbol = <\0>, addr = 1582382800587
+symbol = <\n>, addr = 1582382800588
+Symbol = <h>, his addr = 1582382800589
+Symbol = <l>, his addr = 1582382800590
+Symbol = <t>, his addr = 1582382800591
+symbol = <\0>, addr = 1582382800592
+symbol = <\n>, addr = 1582382800593
+symbol = <\n>, addr = 1582382800594
+=============================================================================
+1)Temp_string = push
+Temp_value = 10.000000
+2)Temp_string = pop
+Temp_value = 10.000000
+3)Temp_string = add
+Temp_value = 10.000000
+4)Temp_string = mul
+Temp_value = 10.000000
+5)Temp_string = out
+Temp_value = 10.000000
+6)Temp_string = hlt
+Temp_value = 10.000000
+======================================================================================
+Number  00000  00001  00002  00003  00004  00005  00006  00007  00008  00009  00010  00011  00012  00013  00014  00015  00016  00017  00018  00019  00020  00021  00022  00023  
+Value   01.00  10.00  02.00  10.00  03.00  04.00  -1.00  00.00  00.00  00.00  00.00  00.00  00.00  00.00  00.00  00.00  00.00  00.00  00.00  00.00  00.00  00.00  00.00  00.00  
+======================================================================================

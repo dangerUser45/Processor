@@ -1,4 +1,6 @@
 push 10
-pop 20
+pop
 add
 mul
+out
+hlt
