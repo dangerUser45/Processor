@@ -1,5 +1,5 @@
 
-#include "Common.h"
+#include "Stack_Common.h"
 #include "Stack.h"
 #include "Debug.h"
                                                                                                    
@@ -51,7 +51,7 @@ int Stack_Push (stack_t* Data, stack_el_t elem)
     return NO_ERROR_;
 }
 //==================================================================================================
-int Stack_Pop (stack_t* Data)
+int Stack_Pop (stack_t* Data, stack_el_t* pop_value)
 {
 
     CHECK ( , "Stack_Pop")
@@ -71,6 +71,7 @@ int Stack_Pop (stack_t* Data)
     fprintf (Log_File, "size = %zd\n", size); // !!!
     fprintf(Log_File, "addr_popa = %p\n",  Data -> buffer +size ); // !!!
 
+    *pop_value = Data -> buffer [size - 1 ONDEBUG (+1)];
     Data -> buffer [size - 1 ONDEBUG (+1)] = POISON;
     Data -> size -= 1;
     CHECK ( , "Stack_Pop")

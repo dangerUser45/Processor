@@ -16,4 +16,9 @@ enum CMD
     JE   =  11,
     JHE  =  12,
     OUT_ =  13,
+    IN__ =  14,
+    SQRT =  15, 
+    SIN  =  16,
+    COS  =  17,
+    DUMP =  18,
 };

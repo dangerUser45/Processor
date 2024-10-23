@@ -25,7 +25,7 @@ $$   if (res) abort ();
 
 $$  Dump_proccessor (&data_proc);
 
-    //Run ();
-$$   Close_file (Log_File);
+$$  Run (data_proc.buffer_for_code, data_proc.n_cmd);
+$$  Close_file (Log_File);
     return 0;
 }
