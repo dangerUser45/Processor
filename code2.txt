@@ -1,6 +1,3 @@
-qwe 34
-wer 5
-add 444
-mul 111
-out 565
-2t4
+push 55
+push 23
+mul

@@ -54,7 +54,7 @@ enum code_error
         BAD_HASH_BUF     = (1<<11)
     };
 
-typedef int stack_el_t;
+typedef double stack_el_t;
 typedef long long unsigned int uint_t;
 const stack_el_t POISON = -666;
 const stack_el_t CANARY_B = -123401234;

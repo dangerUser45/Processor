@@ -1,6 +1,2 @@
 push 10
-pop
-add
-mul
-out
 hlt

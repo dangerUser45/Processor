@@ -11,10 +11,17 @@
 #include "Proc_run.h"
 
 
-void Run (el_t* code, long n_cmd)
+int Run (SPU* data_proc)
 {
+    assert (data_proc);
     stack_t stk = {};
-    STACK_CTOR (&stk, 1);
+    data_proc -> stk = &stk;
+
+    el_t* code = data_proc -> buffer_for_code;
+    long n_cmd = data_proc -> n_cmd ;
+
+
+    STACK_CTOR (&stk, n_cmd);
     int ip = 0;
     stack_el_t a = 0;
     stack_el_t b = 0;
@@ -24,14 +31,16 @@ void Run (el_t* code, long n_cmd)
     {
         switch ((int) code[ip])
         {
-            case HLT  : break;
+            case HLT  : return NO_ERROR_;
             
-            case PUSH: Stack_Push (&stk, code[ip+1]);
-                       ip += 2;
-                break;
+            case PUSH:  Stack_Push (&stk, code[ip+1]);
+                        ip += 2;
+                        break;
+
             case POP  : Stack_Pop (&stk, &a);
                         ip += 1;
-                break;
+                        break;
+
             case ADD  : Stack_Pop (&stk, &a);
                         Stack_Pop (&stk, &b);
                         Stack_Push (&stk, a + b);
@@ -60,28 +69,35 @@ void Run (el_t* code, long n_cmd)
             
             case JBE  : _JUMP_COMMON_(1, <=)
       
-            case JE   : Stack_Pop (&stk, &a);
-                        Stack_Pop (&stk, &b);
-                        if (b = a) Jump (code, &ip);
-                        break;
+            case JE   : _JUMP_COMMON_(1, ==)
            
-            case JHE  : Stack_Pop (&stk, &a);
-                        Stack_Pop (&stk, &b);
-                        if (b != a) Jump (code, &ip);
-                        break;
+            case JHE  : _JUMP_COMMON_(1, !=)
 
             case OUT_ : Stack_Pop (&stk, &a);
-                        fprintf (Log_File, "%lf", a) 
+                        fprintf (Log_File, "%lf", a); 
                         break;
 
-            case IN__ : scanf ("%lf", &a)
-                        Stack_Push (&stk, a * b);
+            case IN__ : scanf ("%lf", &a);
+                        Stack_Push (&stk, a);
                         break;
 
-            default   : fprintf (Log_File, "Syntax_Error\n");
+            case SQRT : Stack_Pop (&stk, &a);
+                        Stack_Push (&stk, sqrt (a));
+                        break;
 
+            case PUSH_REG: a = data_proc ->register_buffer [code[ip+1]];
+                           Stack_Push (&stk, a);
+                           break;
+
+            case POP_REG : Stack_Pop (&stk, &a);
+                           data_proc ->register_buffer [code[ip+1]] = a;
+                           break;
+
+            default   : fprintf (Log_File, "Syntax_Error: %lf\n", code[ip]);
+                        return GENERAL_ERROR;  
         } 
     }
+
 }
 //==================================================================================================
 int Load_code (SPU* data_proc, FILE* code_text, el_t* buffer, size_t size)
@@ -113,6 +129,27 @@ int Dump_proccessor (SPU* data_proc)
 int Jump (el_t* code, int* ip)
 {
     *ip = code [*ip+1];
+    return NO_ERROR_;
+}
+//==================================================================================================
+int Ctor_for_proc (SPU* data_for_proc)
+{
+    el_t* buffer_for_code = (el_t*) calloc (100, sizeof (el_t));
+    if (buffer_for_code != NULL)
+    data_for_proc -> buffer_for_code = buffer_for_code;
+
+    el_t* reg = (el_t*) calloc (8, sizeof (el_t));
+    if (reg != NULL)
+        data_for_proc -> register_buffer = reg;
+    
+    return NO_ERROR_;
+}
+//==================================================================================================
+int Dtor_for_proc (SPU* data_for_proc)
+{
+    free (data_for_proc -> buffer_for_code);
+    free (data_for_proc -> register_buffer);
+
     return NO_ERROR_;
 }
 //==================================================================================================

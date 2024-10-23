@@ -1,0 +1,151 @@
+In file included from proc_run.cpp:10:
+Proc_common.h:14:53: warning: backslash-newline at end of file
+   14 | #define _JUMP_COMMON_(flag_cond, code_op, ... )     \
+      |                                                      
+Proc_common.h:30:41: error: stray '\' in program
+   30 | }                                       \
+      |                                         ^
+proc_run.cpp:53:25: note: in expansion of macro '_JUMP_COMMON_'
+   53 |             case JMP  : _JUMP_COMMON_(0, ==)
+      |                         ^~~~~~~~~~~~~
+Proc_common.h:30:41: error: stray '\' in program
+   30 | }                                       \
+      |                                         ^
+proc_run.cpp:55:25: note: in expansion of macro '_JUMP_COMMON_'
+   55 |             case JA   : _JUMP_COMMON_(1, >)
+      |                         ^~~~~~~~~~~~~
+Proc_common.h:30:41: error: stray '\' in program
+   30 | }                                       \
+      |                                         ^
+proc_run.cpp:57:25: note: in expansion of macro '_JUMP_COMMON_'
+   57 |             case JB   : _JUMP_COMMON_(1, <)
+      |                         ^~~~~~~~~~~~~
+Proc_common.h:30:41: error: stray '\' in program
+   30 | }                                       \
+      |                                         ^
+proc_run.cpp:59:25: note: in expansion of macro '_JUMP_COMMON_'
+   59 |             case JAE  : _JUMP_COMMON_(1, >=)
+      |                         ^~~~~~~~~~~~~
+Proc_common.h:30:41: error: stray '\' in program
+   30 | }                                       \
+      |                                         ^
+proc_run.cpp:61:25: note: in expansion of macro '_JUMP_COMMON_'
+   61 |             case JBE  : _JUMP_COMMON_(1, <=)
+      |                         ^~~~~~~~~~~~~
+proc_run.cpp: In function 'void Run(el_t*, long int)':
+proc_run.cpp:29:51: warning: conversion from 'el_t' {aka 'double'} to 'stack_el_t' {aka 'int'} may change value [-Wfloat-conversion]
+   29 |             case PUSH: Stack_Push (&stk, code[ip+1]);
+      |                                          ~~~~~~~~~^
+Proc_common.h:18:9: error: 'Jump' was not declared in this scope
+   18 |         Jump (code, &ip);               \
+      |         ^~~~
+proc_run.cpp:53:25: note: in expansion of macro '_JUMP_COMMON_'
+   53 |             case JMP  : _JUMP_COMMON_(0, ==)
+      |                         ^~~~~~~~~~~~~
+Proc_common.h:26:26: error: 'Jump' was not declared in this scope
+   26 |         if (b code_op a) Jump (code, &ip); \
+      |                          ^~~~
+proc_run.cpp:53:25: note: in expansion of macro '_JUMP_COMMON_'
+   53 |             case JMP  : _JUMP_COMMON_(0, ==)
+      |                         ^~~~~~~~~~~~~
+Proc_common.h:18:9: error: 'Jump' was not declared in this scope
+   18 |         Jump (code, &ip);               \
+      |         ^~~~
+proc_run.cpp:55:25: note: in expansion of macro '_JUMP_COMMON_'
+   55 |             case JA   : _JUMP_COMMON_(1, >)
+      |                         ^~~~~~~~~~~~~
+Proc_common.h:26:26: error: 'Jump' was not declared in this scope
+   26 |         if (b code_op a) Jump (code, &ip); \
+      |                          ^~~~
+proc_run.cpp:55:25: note: in expansion of macro '_JUMP_COMMON_'
+   55 |             case JA   : _JUMP_COMMON_(1, >)
+      |                         ^~~~~~~~~~~~~
+Proc_common.h:18:9: error: 'Jump' was not declared in this scope
+   18 |         Jump (code, &ip);               \
+      |         ^~~~
+proc_run.cpp:57:25: note: in expansion of macro '_JUMP_COMMON_'
+   57 |             case JB   : _JUMP_COMMON_(1, <)
+      |                         ^~~~~~~~~~~~~
+Proc_common.h:26:26: error: 'Jump' was not declared in this scope
+   26 |         if (b code_op a) Jump (code, &ip); \
+      |                          ^~~~
+proc_run.cpp:57:25: note: in expansion of macro '_JUMP_COMMON_'
+   57 |             case JB   : _JUMP_COMMON_(1, <)
+      |                         ^~~~~~~~~~~~~
+Proc_common.h:18:9: error: 'Jump' was not declared in this scope
+   18 |         Jump (code, &ip);               \
+      |         ^~~~
+proc_run.cpp:59:25: note: in expansion of macro '_JUMP_COMMON_'
+   59 |             case JAE  : _JUMP_COMMON_(1, >=)
+      |                         ^~~~~~~~~~~~~
+Proc_common.h:26:26: error: 'Jump' was not declared in this scope
+   26 |         if (b code_op a) Jump (code, &ip); \
+      |                          ^~~~
+proc_run.cpp:59:25: note: in expansion of macro '_JUMP_COMMON_'
+   59 |             case JAE  : _JUMP_COMMON_(1, >=)
+      |                         ^~~~~~~~~~~~~
+Proc_common.h:18:9: error: 'Jump' was not declared in this scope
+   18 |         Jump (code, &ip);               \
+      |         ^~~~
+proc_run.cpp:61:25: note: in expansion of macro '_JUMP_COMMON_'
+   61 |             case JBE  : _JUMP_COMMON_(1, <=)
+      |                         ^~~~~~~~~~~~~
+Proc_common.h:26:26: error: 'Jump' was not declared in this scope
+   26 |         if (b code_op a) Jump (code, &ip); \
+      |                          ^~~~
+proc_run.cpp:61:25: note: in expansion of macro '_JUMP_COMMON_'
+   61 |             case JBE  : _JUMP_COMMON_(1, <=)
+      |                         ^~~~~~~~~~~~~
+proc_run.cpp:65:31: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+   65 |                         if (b = a) Jump (code, &ip);
+      |                             ~~^~~
+proc_run.cpp:65:36: error: 'Jump' was not declared in this scope
+   65 |                         if (b = a) Jump (code, &ip);
+      |                                    ^~~~
+proc_run.cpp:70:37: error: 'Jump' was not declared in this scope
+   70 |                         if (b != a) Jump (code, &ip);
+      |                                     ^~~~
+proc_run.cpp:74:47: warning: format '%lf' expects argument of type 'double', but argument 3 has type 'stack_el_t' {aka 'int'} [-Wformat=]
+   74 |                         fprintf (Log_File, "%lf", a)
+      |                                             ~~^   ~
+      |                                               |   |
+      |                                               |   stack_el_t {aka int}
+      |                                               double
+      |                                             %d
+proc_run.cpp:74:53: error: expected ';' before 'break'
+   74 |                         fprintf (Log_File, "%lf", a)
+      |                                                     ^
+      |                                                     ;
+   75 |                         break;
+      |                         ~~~~~                        
+proc_run.cpp:77:35: warning: format '%lf' expects argument of type 'double*', but argument 2 has type 'stack_el_t*' {aka 'int*'} [-Wformat=]
+   77 |             case IN__ : scanf ("%lf", &a)
+      |                                 ~~^   ~~
+      |                                   |   |
+      |                                   |   stack_el_t* {aka int*}
+      |                                   double*
+      |                                 %d
+proc_run.cpp:77:42: error: expected ';' before 'Stack_Push'
+   77 |             case IN__ : scanf ("%lf", &a)
+      |                                          ^
+      |                                          ;
+   78 |                         Stack_Push (&stk, a * b);
+      |                         ~~~~~~~~~~        
+proc_run.cpp:14:28: warning: unused parameter 'n_cmd' [-Wunused-parameter]
+   14 | void Run (el_t* code, long n_cmd)
+      |                       ~~~~~^~~~~
+proc_run.cpp: At global scope:
+proc_run.cpp:113:5: warning: no previous declaration for 'int Jump(el_t*, int*)' [-Wmissing-declarations]
+  113 | int Jump (el_t* code, int* ip)
+      |     ^~~~
+proc_run.cpp: In function 'int Jump(el_t*, int*)':
+proc_run.cpp:115:22: warning: conversion from 'el_t' {aka 'double'} to 'int' may change value [-Wfloat-conversion]
+  115 |     *ip = code [*ip+1];
+      |           ~~~~~~~~~~~^
+proc_run.cpp: In function 'void Run(el_t*, long int)':
+proc_run.cpp:74:33: warning: this statement may fall through [-Wimplicit-fallthrough=]
+   74 |                         fprintf (Log_File, "%lf", a)
+      |                         ~~~~~~~~^~~~~~~~~~~~~~~~~~~~
+proc_run.cpp:77:13: note: here
+   77 |             case IN__ : scanf ("%lf", &a)
+      |             ^~~~
