@@ -1,3 +1,9 @@
+#pragma once
+
+#include <stdio.h>
+
+#include "Stack_Common.h"
+
 int Create_file (const char*);
 int Close_file (FILE* );
 int Dump (stack_t* Data);

@@ -1,3 +1,5 @@
+#pragma once
+
 struct ONEGIN;
 struct ASM_DBG;
 

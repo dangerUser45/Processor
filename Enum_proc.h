@@ -14,5 +14,6 @@ enum CMD
     JAE  =  9,
     JBE  =  10,
     JE   =  11,
-    JHE  =  12
+    JHE  =  12,
+    OUT_ =  13,
 };

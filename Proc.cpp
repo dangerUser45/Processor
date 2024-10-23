@@ -1,13 +1,31 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "Machine.h"
+#include "Stack_for_proc\Stack_Common.h"
 #include "Stack_for_proc\Stack.h"
+#include "Stack_for_proc\Debug.h"
+#include "Asm.h"
+#include "Proc_common.h"
 #include "Proc_run.h"
+#include "Onegin_for_proc\Onegin_processing.h"
+
 
 int main (int argc, char* argv[])
-{
-    int buffer[100] = {};
-    Load_code (argv[1], buffer, 100);
-    
-    Run ();
+{   
+$$   Check_argc (argc);
+
+$$    SPU data_proc = {};                                 //create buffer_for_code   
+$$    el_t buffer_for_code[100] = {};
+
+$$    data_proc.buffer_for_code = buffer_for_code;        // put on struct
+
+$$   Create_file ("PROC_LOG.txt");    //создал log_file
+$$   FILE* code_text = fopen (argv[1], "r");
+$$   int res = Load_code (&data_proc, code_text, buffer_for_code, 100);
+$$   fclose (code_text);
+$$   if (res) abort ();
+
+$$  Dump_proccessor (&data_proc);
+
+    //Run ();
+$$   Close_file (Log_File);
     return 0;
 }

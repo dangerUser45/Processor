@@ -1,11 +1,11 @@
 #include "..\SuperLibs\TXLib.h"
-#include "Stack_for_proc\Common.h"
+#include "Stack_for_proc\Stack_Common.h"
 #include "Asm.h"
 #include "Onegin_for_proc\Onegin_processing.h"
 #include "Onegin_for_proc\Onegin_General.h"
 #include "Onegin_for_proc\Print.h"
 #include "Stack_for_proc\Debug.h"
-#include "Processor_common.h"
+#include "Enum_proc.h"
 
 int main (int argc, char* argv[])
 {   
@@ -30,8 +30,10 @@ int main (int argc, char* argv[])
     DBG_Print (&onegin_data);
 
     Asm_Ctor (&data_asm, onegin_data.string_quantity);                                                                                            
-    Processing_Command (&data_asm, onegin_data.str_data, onegin_data.string_quantity);
+    Processing_Command (&data_asm, onegin_data.str_data, onegin_data.string_quantity) OR DIE;
     Dump (&data_asm, &onegin_data);
+
+    Fill_Code_file (&data_asm, "OUT_ASM.txt");
 
     Close_file (Log_File);
     Asm_Dtor (&data_asm.mem_cmd);
@@ -44,7 +46,7 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
     char temp_string [20] = {};
     el_t temp_value = 0;
 
-    long i = 0;
+    long  ip = 0;
     long line = 0;
     
     while (line < size)
@@ -60,91 +62,101 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
 
         if (strcmp (temp_string, "hlt") == 0)
         {
-            mem_cmd[i++] = (el_t) HLT;
+            mem_cmd[ ip++] = (el_t) HLT;
         }
 
-        if (strcmp (temp_string, "push") == 0)
+        else if (strcmp (temp_string, "push") == 0)
         {
-            mem_cmd[i++] = (el_t) PUSH;
-            mem_cmd[i++ ] = (el_t) temp_value;
+            mem_cmd[ ip++] = (el_t) PUSH;
+            mem_cmd[ ip++ ] = (el_t) temp_value;
         }
 
-        if (strcmp (temp_string, "pop") == 0)
+        else if (strcmp (temp_string, "pop") == 0)
         {
-            mem_cmd[i++] = (el_t) POP;
-            mem_cmd[i++] = (el_t) temp_value;
+            mem_cmd[ ip++] = (el_t) POP;
+            mem_cmd[ ip++] = (el_t) temp_value;
         }
 
-        if (strcmp (temp_string, "add") == 0)
+        else if (strcmp (temp_string, "add") == 0)
         {
-            mem_cmd[i++] = (el_t) ADD;
+            mem_cmd[ ip++] = (el_t) ADD;
             //записать в массив
         }
 
-        if (strcmp (temp_string, "mul") == 0)
+        else if (strcmp (temp_string, "mul") == 0)
         {
-            mem_cmd[i++] = (el_t) MUL;   
+            mem_cmd[ ip++] = (el_t) MUL;   
             //записать в массив
         }
         
-        if (strcmp (temp_string, "div") == 0)
+        else  if (strcmp (temp_string, "div") == 0)
         {
-            mem_cmd[i++] = (el_t) DIV;   
+            mem_cmd[ ip++] = (el_t) DIV;   
             //записать в массив
         }
-        if (strcmp (temp_string, "jmp") == 0)
+        else if (strcmp (temp_string, "jmp") == 0)
         {
-            mem_cmd[i++] = (el_t) JMP;
-            mem_cmd[i++] = (el_t) temp_value;
+            mem_cmd[ ip++] = (el_t) JMP;
+            mem_cmd[ ip++] = (el_t) temp_value;
              
         }
 
-        if (strcmp (temp_string, "ja") == 0)
+        else if (strcmp (temp_string, "ja") == 0)
         {
-            mem_cmd[i++] = (el_t) JA;
-            mem_cmd[i++] = (el_t) temp_value;
-             
-            //записать в массив
-        }
-
-        if (strcmp (temp_string, "jb") == 0)
-        {
-            mem_cmd[i++] = (el_t) JB;
-            mem_cmd[i++]  = (el_t) temp_value;
+            mem_cmd[ ip++] = (el_t) JA;
+            mem_cmd[ ip++] = (el_t) temp_value;
              
             //записать в массив
         }
 
-        if (strcmp (temp_string, "jae") == 0)
+        else if (strcmp (temp_string, "jb") == 0)
         {
-            mem_cmd[i++] = (el_t) JAE;
-            mem_cmd[i++] = (el_t) temp_value;
+            mem_cmd[ ip++] = (el_t) JB;
+            mem_cmd[ ip++]  = (el_t) temp_value;
              
             //записать в массив
         }
 
-        if (strcmp (temp_string, "jbe") == 0)
+        else if (strcmp (temp_string, "jae") == 0)
         {
-            mem_cmd[i++] = (el_t) JBE;
-            mem_cmd[i++ ] = (el_t) temp_value;
+            mem_cmd[ ip++] = (el_t) JAE;
+            mem_cmd[ ip++] = (el_t) temp_value;
              
             //записать в массив
         }
 
-        if (strcmp (temp_string, "je") == 0)
+        else if (strcmp (temp_string, "jbe") == 0)
         {
-            mem_cmd[i++] = (el_t) JE;
-            mem_cmd[i++] = (el_t) temp_value;
+            mem_cmd[ip++] = (el_t) JBE;
+            mem_cmd[ip++ ] = (el_t) temp_value;
              
             //записать в массив
         }
 
-        if (strcmp (temp_string, "jhe") == 0)
+        else if (strcmp (temp_string, "je") == 0)
         {
-            mem_cmd[i++] = (el_t) JHE;
-            mem_cmd[i++] = (el_t) temp_value;
+            mem_cmd[ip++] = (el_t) JE;
+            mem_cmd[ip++] = (el_t) temp_value;
+             
+            //записать в массив
+        }
+
+       else if (strcmp (temp_string, "jhe") == 0)
+        {
+            mem_cmd[ip++] = (el_t) JHE;
+            mem_cmd[ip++] = (el_t) temp_value;
+        }
+        else if (strcmp (temp_string, "out") == 0)
+        {
+            mem_cmd[ip++] = (el_t) OUT_;
+        }
+        else
+        {   
+            fprintf (Log_File, "SYNTAX ERROR !: %s", temp_string);
+            return GENERAL_ERROR;
         }
     }
+    data_asm -> final_ip  = ip; 
     return NO_ERROR_; 
 }
 //==================================================================================================
@@ -186,5 +198,23 @@ int Dump (ASM* str_data, ONEGIN* data)
     }
     fprintf (Log_File, "\n======================================================================================\n");
 
+    return NO_ERROR_;
+}
+//==================================================================================================
+int Fill_Code_file (ASM* data_asm, const char* name)
+{
+    FILE* output_file = fopen (name, "w");
+
+    if ((output_file) == NULL)
+    {
+        fprintf (stdout, "Не удается открыть файл %s\n", name);
+        return 0;
+    }
+
+    fprintf (output_file, "%s %d %ld ", "MMD", 13, data_asm -> final_ip);
+    for (int i = 0; i < data_asm -> final_ip; ++i)
+        fprintf (output_file, "%lf ", data_asm -> mem_cmd [i]);
+    
+    fclose (output_file);
     return NO_ERROR_;
 }

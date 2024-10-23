@@ -76,7 +76,7 @@ void Check_argc (int argc)
 {
     if (argc != 2)
     {
-        fprintf (stderr, "Error: the file name was not received\n");
+        fprintf (stderr, "Error: incorrect number of arguments\n");
         exit(1);
     }
 }
