@@ -74,7 +74,7 @@ int Run (SPU* data_proc)
             case JHE  : _JUMP_COMMON_(1, !=)
 
             case OUT_ : Stack_Pop (&stk, &a);
-                        fprintf (Log_File, "%lf", a); 
+                        printf ("%lf", a); 
                         break;
 
             case IN__ : scanf ("%lf", &a);
@@ -85,6 +85,17 @@ int Run (SPU* data_proc)
                         Stack_Push (&stk, sqrt (a));
                         break;
 
+            case SIN :  Stack_Pop (&stk, &a);
+                        Stack_Push (&stk, sin (a));
+                        break;
+
+            case COS :  Stack_Pop (&stk, &a);
+                        Stack_Push (&stk, cos (a));
+                        break;
+
+            case DUMP : /*  dump ()*/ 
+                        break;
+            
             case PUSH_REG: a = data_proc ->register_buffer [code[ip+1]];
                            Stack_Push (&stk, a);
                            break;
