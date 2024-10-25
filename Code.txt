@@ -1,9 +1,12 @@
-push 10
+push 4
+push 4
+mul
+push 4
+push 1
+push -5
+mul
+mul
+sub
+sqrt
 out
-push 3
-out
-push 5
-out
-add
-out 
 hlt

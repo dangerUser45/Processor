@@ -44,6 +44,7 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
 {
     el_t* mem_cmd = data_asm -> mem_cmd;
     char temp_string [20] = {};
+    char string_for_type [20] = {};
     el_t temp_value = 0;
 
     long  ip = 0;
@@ -52,9 +53,23 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
     while (line < size)
     {   
         int cnt_rd_sym= 0;
+        int type_of_arg = 0;
 
         sscanf (str_data[line].str_addr, "%s%n", temp_string, &cnt_rd_sym);
-        sscanf (str_data[line].str_addr + cnt_rd_sym, "%lf", &temp_value);
+
+        if (sscanf (str_data[line].str_addr + cnt_rd_sym, "%lf", &temp_value) == 1)
+            type_of_arg = 1;
+
+        else if (sscanf (str_data[line].str_addr + cnt_rd_sym, "%s", &string_for_type) == 1)
+        {
+            if (strcmp (string_for_type, "ax") == 0) temp_value = FST_RG;
+            if (strcmp (string_for_type, "bx") == 0) temp_value = SCD_RG;
+            if (strcmp (string_for_type, "cx") == 0) temp_value = THD_RG;
+            if (strcmp (string_for_type, "dx") == 0) temp_value = FRH_RG;
+            if (strcmp (string_for_type, "dx") == 0) temp_value = FRH_RG;
+
+            type_of_arg = 2;
+        }
         ++line;
 
         fprintf (Log_File, "%ld)Temp_string = %s\n",line, temp_string);
@@ -80,7 +95,11 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
         else if (strcmp (temp_string, "add") == 0)
         {
             mem_cmd[ ip++] = (el_t) ADD;
-            //записать в массив
+        }
+
+        else if (strcmp (temp_string, "sub") == 0)
+        {
+            mem_cmd[ip++] = (el_t) SUB;
         }
 
         else if (strcmp (temp_string, "mul") == 0)
@@ -88,7 +107,48 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
             mem_cmd[ ip++] = (el_t) MUL;   
             //записать в массив
         }
+
+        else if (strcmp (temp_string, "sqrt") == 0)
+        {
+            mem_cmd[ ip++] = (el_t) SQRT;   
+            //записать в массив
+        }
+
+        else if (strcmp (temp_string, "in") == 0)
+        {
+            mem_cmd[ ip++] = (el_t) IN__;   
+            //записать в массив
+        }
+
+        else if (strcmp (temp_string, "sin") == 0)
+        {
+            mem_cmd[ ip++] = (el_t) SIN;   
+            //записать в массив
+        }
+
+        else if (strcmp (temp_string, "cos") == 0)
+        {
+            mem_cmd[ ip++] = (el_t) COS;   
+            //записать в массив
+        }
+
+        else if (strcmp (temp_string, "dump") == 0)
+        {
+            mem_cmd[ ip++] = (el_t) DUMP;   
+            //записать в массив
+        }
         
+        /*else if (strcmp (temp_string, "push_reg") == 0)
+        {
+            mem_cmd[ ip++] = (el_t) PUSH_REG;   
+            //записать в массив                                    TODO
+        }
+
+        else if (strcmp (temp_string, "pop_reg") == 0)
+        {
+            mem_cmd[ ip++] = (el_t) POP_REG;   
+            //записать в массив
+        }*/
         else  if (strcmp (temp_string, "div") == 0)
         {
             mem_cmd[ ip++] = (el_t) DIV;   

@@ -8,3 +8,5 @@ int Run (SPU* data_for_proc);
 int Jump (el_t* code, int* ip);
 int Ctor_for_proc (SPU* data_for_proc);
 int Dtor_for_proc (SPU* data_for_proc);
+int Dump_St (stack_t* stk);
+

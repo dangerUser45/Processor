@@ -32,28 +32,40 @@ int Run (SPU* data_proc)
             case HLT  : return NO_ERROR_;
             
             case PUSH:  Stack_Push (stk, code[ip+1]);
+                        Dump_St (stk);
                         ip += 2;
                         break;
 
             case POP  : Stack_Pop (stk, &a);
+                        Dump_St (stk);
                         ip += 1;
                         break;
 
             case ADD  : Stack_Pop (stk, &a);
                         Stack_Pop (stk, &b);
                         Stack_Push (stk, a + b);
+                        Dump_St (stk);
+                        ip += 1;
+                        break;
+
+            case SUB  : Stack_Pop (stk, &a);
+                        Stack_Pop (stk, &b);
+                        Stack_Push (stk, b - a);
+                        Dump_St (stk);
                         ip += 1;
                         break;
 
             case MUL  : Stack_Pop (stk, &a);
                         Stack_Pop (stk, &b);
                         Stack_Push (stk, a * b);
+                        Dump_St (stk);
                         ip += 1;
                         break;
 
             case DIV  : Stack_Pop (stk, &a);
                         Stack_Pop (stk, &b);
                         Stack_Push (stk, b / a);
+                        Dump_St (stk);
                         ip += 1;
                         break;
 
@@ -72,35 +84,41 @@ int Run (SPU* data_proc)
             case JHE  : _JUMP_COMMON_(1, !=)
 
             case OUT_ : Stack_Pop (stk, &a);
-                        //printf ("%lf\n", stk.buffer[stk.size]);
+                        printf ("%lf\n", a);
                         ip += 1; 
-                        break;
+                        break;  
 
             case IN__ : scanf ("%lf", &a);
                         Stack_Push (stk, a);
+                        ip += 1;
                         break;
 
             case SQRT : Stack_Pop (stk, &a);
                         Stack_Push (stk, sqrt (a));
+                        ip += 1;
                         break;
 
             case SIN :  Stack_Pop (stk, &a);
                         Stack_Push (stk, sin (a));
+                        ip += 1;
                         break;
 
             case COS :  Stack_Pop (stk, &a);
                         Stack_Push (stk, cos (a));
+                        ip += 1;
                         break;
 
-            case DUMP : /*  dump ()*/ 
+            case DUMP : //  dump ()                                               TODO
                         break;
             
-            case PUSH_REG: a = data_proc ->register_buffer [int(code[ip+1])];
+            case PUSH_REG: a = data_proc -> register_buffer [int(code[ip+1])];
                            Stack_Push (stk, a);
+                           ip += 2;
                            break;
 
             case POP_REG : Stack_Pop (stk, &a);
-                           data_proc ->register_buffer [int (code[ip+1])] = a;
+                           data_proc -> register_buffer [int (code[ip+1])] = a;
+                           ip += 2;
                            break;
 
             default   : fprintf (Log_File, "Syntax_Error: %lf\n", code[ip]);
@@ -156,17 +174,17 @@ int Dump_proccessor (const SPU* data_proc)
     for (size_t i = 0; i < NUM_REGS; ++i)
     {
         fprintf (Log_File, "\t%p", data_proc -> register_buffer + i);
- $$       fprintf (Log_File, "\t%lf\n", data_proc -> register_buffer[i]);
- $$   }
- $$   fprintf (Log_File, "\n\t\t\10STK\n");
- $$   //           Dump_massiv ()                           TODO
- $$   Dump (&data_proc -> stk);
- $$
+        fprintf (Log_File, "\t%lf\n", data_proc -> register_buffer[i]);
+    }
+    fprintf (Log_File, "\n\t\t\10STK\n");
+    //           Dump_massiv ()                           TODO
+    //Dump (&data_proc -> stk);
+ 
 
-    fprintf (Log_File, "data_proc -> stk = NULL !!!\n");
- $$    for (int i = 0; i < data_proc -> n_cmd; ++i)
- $$   //fprintf (Log_File, "%lf\n", data_proc -> stk.buffer[data_proc -> stk.size - 1]);
- $$
+      //Dump (&data_proc -> stk);
+     for (int i = 0; i < data_proc -> n_cmd; ++i)
+    fprintf (Log_File, "\t%lf\n", data_proc -> stk.buffer[i]);
+ 
     fprintf (Log_File, "=================================================================\n");
 
     return NO_ERROR_;
@@ -180,16 +198,16 @@ int Jump (el_t* code, int* ip)
 //==================================================================================================
 int Ctor_for_proc (SPU* data_for_proc)
 {
-$$    assert (data_for_proc);
-$$    el_t* buffer_for_code = (el_t*) calloc (100, sizeof (el_t));
-$$    if (buffer_for_code != NULL)
-$$    data_for_proc -> buffer_for_code = buffer_for_code;
+    assert (data_for_proc);
+    el_t* buffer_for_code = (el_t*) calloc (100, sizeof (el_t));
+    if (buffer_for_code != NULL)
+    data_for_proc -> buffer_for_code = buffer_for_code;
 
-$$    STACK_CTOR(&data_for_proc -> stk, 100);
+    STACK_CTOR(&data_for_proc -> stk, 100);
 
-$$    el_t* reg = (el_t*) calloc (NUM_REGS, sizeof (el_t));
-$$   if (reg != NULL)
-$$       data_for_proc -> register_buffer = reg;
+    el_t* reg = (el_t*) calloc (NUM_REGS, sizeof (el_t));
+   if (reg != NULL)
+       data_for_proc -> register_buffer = reg;
     
     return NO_ERROR_;
 }
@@ -203,3 +221,16 @@ int Dtor_for_proc (SPU* data_for_proc)
     return NO_ERROR_;
 }
 //==================================================================================================
+int Dump_St (stack_t* stk)
+{
+    assert(stk);
+    fprintf (stderr, "Sz = %lld, ",stk ->size);
+    fprintf (stderr, "cp = %lld\n",stk -> capacity);
+
+    if (stk -> buffer != NULL)
+    for (int i = 0; i < stk->size; ++i) 
+        fprintf (stderr, "[%d]%lf ", i,  stk -> buffer [i]);
+    fprintf (stderr, "\n");
+
+    return NO_ERROR_;
+}

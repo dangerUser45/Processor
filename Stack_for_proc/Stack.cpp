@@ -1,4 +1,5 @@
 
+#include  "..\SuperLibs\TXLib.h"
 #include "Stack_Common.h"
 #include "Stack.h"
 #include "Debug.h"
@@ -14,6 +15,8 @@ int Stack_Ctor (stack_t* Data, ssize_t capacity ONDEBUG(, const char* name, cons
 
     if (buffer == NULL) return BUFFER_NULL;
     Data -> buffer = buffer;
+
+    printf ("Log file = %p", Log_File);
     fprintf (Log_File, "data-> buffer = %p\n", Data -> buffer); // !!!
     ONDEBUG (Data -> canary1_struct = CANARY_S;)
     ONDEBUG (Data -> name = name;)
