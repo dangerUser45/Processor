@@ -6,7 +6,7 @@
 #ifndef COMMON_H_INCLUDED
 #define COMMON_H_INCLUDED
 
-#define STACK_DEBUG 1
+#define STACK_DEBUG 1   
 
 #if  (STACK_DEBUG == 1)
     #define ONDEBUG( ... ) __VA_ARGS__

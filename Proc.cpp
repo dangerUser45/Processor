@@ -10,23 +10,25 @@
 
 int main (int argc, char* argv[])
 {   
-    Check_argc (argc);
+$$   Check_argc (argc);
 
     SPU data_proc = {};  
-    Ctor_for_proc (&data_proc);                              //create buffer_for_code and registers  
+$$  Ctor_for_proc (&data_proc);                              //create buffer_for_code and registers  
 
-    Create_file ("PROC_LOG.txt");    //создал log_file
+$$   Create_file ("PROC_LOG.txt");    //создал log_file
     FILE* code_text = fopen (argv[1], "r");
     
     int res = Load_code (&data_proc, code_text, data_proc.buffer_for_code, 100); 
     fclose (code_text);
-
     if (res) abort ();
-    Dump_proccessor (&data_proc);
 
-    Run (&data_proc) OR DIE;
-    Close_file (Log_File);
+$$    Dump_proccessor (&data_proc);
 
-    Dtor_for_proc (&data_proc);
+$$    Run (&data_proc) OR DIE;
+$$    Dump_proccessor (&data_proc);
+
+$$    Close_file (Log_File);
+
+$$    Dtor_for_proc (&data_proc);
     return 0;
 }

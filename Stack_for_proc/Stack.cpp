@@ -88,7 +88,7 @@ int Stack_Dtor (stack_t* Data)
     Fill_Poison (Data -> buffer ONDEBUG(+1), Data -> capacity);
     Stack_free (&Data -> buffer);
 
-    ONDEBUG (fprintf(Log_File, "�����������\n");)
+    ONDEBUG (fprintf(Log_File, "зафричилось\n");)
 
     CHECK ( , "Stack_Dtor") // noreturn because use after free () !!!
 

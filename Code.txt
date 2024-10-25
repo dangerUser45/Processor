@@ -1,2 +1,9 @@
 push 10
+out
+push 3
+out
+push 5
+out
+add
+out 
 hlt

@@ -25,9 +25,8 @@ int Close_file (FILE* fp)
     return NO_ERROR_;
 }
 //==================================================================================================
-int Dump (stack_t* Data)
+int Dump (const stack_t* Data)
 {
-
     FILE* fp = Log_File;
     assert (fp);
     fprintf (fp, "//================================================================================================\n");
@@ -42,7 +41,6 @@ int Dump (stack_t* Data)
 
 
     ONDEBUG(fprintf (fp, "  canary1_struct = %d\n", Data -> canary1_struct);)
-    ONDEBUG(fprintf (fp, "  name of struct = %s\n", Data -> name);)
     fprintf (fp, "  buffer = %p\n", Data -> buffer);
     fprintf (fp, "  size = %zd\n", Data -> size);
     fprintf (fp, "  capacity = %zd\n", Data -> capacity);
