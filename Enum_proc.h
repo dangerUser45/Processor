@@ -24,4 +24,17 @@ enum CMD
     DUMP     =  19,
     PUSH_REG =  20,
     POP_REG  =  21,
+    NUMB_CMD,
+};
+enum REG
+{
+    ZERO_RG  =  0,
+    FRST_RG  =  1,
+    SCND_RG  =  2,
+    THRD_RG  =  3,
+    FRTH_RG  =  4,
+    FFTH_RG  =  5,
+    SXTH_RG  =  6,
+    SVNTH_RG =  7,
+    EGHTH_RG =  8
 };

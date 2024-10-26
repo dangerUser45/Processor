@@ -1,6 +1,6 @@
 Compiler = g++
 
-asm : Asm.o Debug.o Stack.o Print.o Processing.o 
+asm : Asm.o Debug.o Stack.o Print.o Processing.o Debug_proc.o
 	$(Compiler) Asm.o Debug.o Stack.o Print.o Processing.o -o asm
 
 proc: 
@@ -20,6 +20,10 @@ Print.o : Onegin_for_proc\Print.cpp
 
 Processing.o : Onegin_for_proc\Processing.cpp
 	$(Compiler) -c Onegin_for_proc\processing.cpp -o processing.o
-	
+
+Debug_proc.o : Debug_proc.cpp
+	$(Compiler) -c debug_proc.cpp -o debug_proc.o
+
+
 clean :
 	del *.o

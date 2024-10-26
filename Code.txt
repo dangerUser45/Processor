@@ -1,12 +1,117 @@
-push 4
-push 4
-mul
-push 4
-push 1
-push -5
-mul
-mul
-sub
-sqrt
+push 33
+pop ax
+push 555
+pop dx 
+
+push ax
+push dx
+pop ax
+pop dx
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 out
 hlt

@@ -60,13 +60,17 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
         if (sscanf (str_data[line].str_addr + cnt_rd_sym, "%lf", &temp_value) == 1)
             type_of_arg = 1;
 
-        else if (sscanf (str_data[line].str_addr + cnt_rd_sym, "%s", &string_for_type) == 1)
+        else if (sscanf (str_data[line].str_addr + cnt_rd_sym, "%s", string_for_type) == 1)
         {
-            if (strcmp (string_for_type, "ax") == 0) temp_value = FST_RG;
-            if (strcmp (string_for_type, "bx") == 0) temp_value = SCD_RG;
-            if (strcmp (string_for_type, "cx") == 0) temp_value = THD_RG;
-            if (strcmp (string_for_type, "dx") == 0) temp_value = FRH_RG;
-            if (strcmp (string_for_type, "dx") == 0) temp_value = FRH_RG;
+            if (strcmp (string_for_type, "zx") == 0) temp_value = ZERO_RG;
+            if (strcmp (string_for_type, "ax") == 0) temp_value = FRST_RG;
+            if (strcmp (string_for_type, "bx") == 0) temp_value = SCND_RG;
+            if (strcmp (string_for_type, "cx") == 0) temp_value = THRD_RG;
+            if (strcmp (string_for_type, "dx") == 0) temp_value = FRTH_RG;
+            if (strcmp (string_for_type, "ex") == 0) temp_value = FFTH_RG;
+            if (strcmp (string_for_type, "fx") == 0) temp_value = SXTH_RG;
+            if (strcmp (string_for_type, "gx") == 0) temp_value = SVNTH_RG;
+            if (strcmp (string_for_type, "hx") == 0) temp_value = EGHTH_RG;
 
             type_of_arg = 2;
         }
@@ -82,14 +86,24 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
 
         else if (strcmp (temp_string, "push") == 0)
         {
-            mem_cmd[ ip++] = (el_t) PUSH;
-            mem_cmd[ ip++ ] = (el_t) temp_value;
+            if (type_of_arg == 1){
+                mem_cmd[ip++] = (el_t) PUSH;
+                mem_cmd[ip++] = (el_t) temp_value;}
+
+            if (type_of_arg == 2){
+                mem_cmd[ip++] = (el_t) PUSH_REG;
+                mem_cmd[ip++] = (el_t) temp_value;}
         }
 
         else if (strcmp (temp_string, "pop") == 0)
         {
-            mem_cmd[ ip++] = (el_t) POP;
-            mem_cmd[ ip++] = (el_t) temp_value;
+            if (type_of_arg == 1){
+                mem_cmd[ip++] = (el_t) POP;
+                mem_cmd[ip++] = (el_t) temp_value;}
+
+            if (type_of_arg == 2){
+                mem_cmd[ip++] = (el_t) POP_REG;
+                mem_cmd[ip++] = (el_t) temp_value;}
         }
 
         else if (strcmp (temp_string, "add") == 0)
