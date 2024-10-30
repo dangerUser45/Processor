@@ -1,7 +1,9 @@
 #include "Machine.h"
 
 #include "Proc_common.h"
-#include "..\Stack_for_proc\Stack_Common.h"
+#include "Stack_for_proc\Stack_Common.h"
+#include "Debug_proc.h"
+
 
 const CMD_INFO info[22] =
     {{"hlt",     0},
@@ -29,7 +31,7 @@ const CMD_INFO info[22] =
     };
 
 //==================================================================================================
-int Dump_proccessor (const SPU* data_proc)
+int Dump_proccessor (const SPU* data_proc, const char* name_calling)
 {
     assert (data_proc);
 
@@ -38,19 +40,20 @@ int Dump_proccessor (const SPU* data_proc)
     fprintf (Log_File, "=================================================================\n");
     fprintf (Log_File, "\t\t\t\04 THE BEST DUMP YOU'VE EVER SEEN \04\n");
 
+    fprintf (Log_File, "\tCalling from: %s\n", name_calling);
     fprintf (Log_File, "\t\tSTRUCT SPU: \n");
     fprintf (Log_File, "\n\t\t\10BUFFER_FOR_CODE\n");
     fprintf (Log_File, "\tnum_of_read_item = %zu\n", data_proc -> num_of_read_item);
 
 
     //           Dump_massiv ()                          TODO
-    fprintf (Log_File, "\tAddress:  \t\tValue:  \t\tDizasm\n"); 
+    fprintf (Log_File, "\tAddress:  \t\tValue:  \tDizasm:\n"); 
     for (size_t i = 0; i < data_proc -> num_of_read_item; ++i)
     {
-        fprintf (Log_File, "%d)     %p\t", i + 1, data_proc -> buffer_for_code + i);
+        fprintf (Log_File, "    %2zu) %p\t", i + 1, data_proc -> buffer_for_code + i);
         fprintf (Log_File, "%0.7lf\n", data_proc -> buffer_for_code[i]);
-        fprintf (Log_File, "%s", Dizassembler (data_proc -> buffer_for_code[i], &ip));
-  
+        //fprintf (Log_File, "\t%s\n", Dizassembler (data_proc -> buffer_for_code[i], &ip));
+    
     }
     
     fprintf (Log_File, "\n\t\t\10REGISTER_BUFFER\n");
@@ -70,7 +73,7 @@ int Dump_proccessor (const SPU* data_proc)
 
       //Dump (&data_proc -> stk);
      for (int i = 0; i < data_proc -> n_cmd; ++i)
-    fprintf (Log_File, "\t%lf\n", data_proc -> stk.buffer[i]);
+    fprintf (Log_File, "    %2d) %lf\n", i ,data_proc -> stk.buffer[i]);
  
     fprintf (Log_File, "=================================================================\n");
 
@@ -91,11 +94,22 @@ int Dump_St (stack_t* stk)
     return NO_ERROR_;
 }
 //==================================================================================================
-const char* Dizassembler (el_t cmd, el_t* addr_ip )
+    const char* Dizassembler (el_t cmd_wrong_t, int* addr_ip)
 {
-    if (cmd < -1 && cmd == 0 &&  cmd > NUMB_CMD - 1){
-        fprintf (Log_File, "DIZASSSEMBLER: SYNTAX ERROR !\n");
-        abort ();}
+    const int CONTINUE__ = 1;
+    const int SKIP__ = -1;
+    static int CONTEXT__ = 0;
 
+    int cmd = (int) cmd_wrong_t;
+    if (CONTEXT__ < 0) {
+        CONTEXT__ = CONTINUE__;
+        return " ";}
+
+    if (cmd < -1 || cmd == 0 ||  cmd > NUMB_CMD - 1){
+        fprintf (Log_File, "\nDIZASSSEMBLER: SYNTAX ERROR !\n");
+        abort ();}
+    
+    *addr_ip += info[cmd].numb_arg + 1;
+    CONTEXT__ = SKIP__;
     return info[(int)cmd].name_cmd;
-}
+}   

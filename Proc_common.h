@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Machine.h"
+#include "Stack_for_proc\Stack_Common.h"
 
 struct SPU
 {

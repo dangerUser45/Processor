@@ -12,7 +12,7 @@ int main (int argc, char* argv[])
     ASM data_asm = {};
     ONEGIN onegin_data = {};
 
-    Create_file ("ASM_LOG.txt");    //создал log_file
+    Create_file ("ASM_LOG.html");    //создал log_file
     Check_argc (argc);
 
     onegin_data.name = argv[1];
@@ -290,5 +290,11 @@ int Fill_Code_file (ASM* data_asm, const char* name)
         fprintf (output_file, "%lf ", data_asm -> mem_cmd [i]);
     
     fclose (output_file);
+    return NO_ERROR_;
+}
+//==================================================================================================
+int Ctor_Labels ()
+{
+
     return NO_ERROR_;
 }

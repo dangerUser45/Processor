@@ -22,10 +22,10 @@ int main (int argc, char* argv[])
     fclose (code_text);
     if (res) abort ();
 
-    Dump_proccessor (&data_proc);
+    Dump_proccessor (&data_proc, "main (): Begining dump");
 
     Run (&data_proc) OR DIE;
-    Dump_proccessor (&data_proc);
+    Dump_proccessor (&data_proc, "main (): Last dump");
 
     Close_file (Log_File);
 

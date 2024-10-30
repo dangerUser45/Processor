@@ -14,7 +14,7 @@ int Create_file (const char* name_of_file)
         return 0;
     }
     setvbuf (Log_File, 0, 0, _IONBF);
-    
+    fprintf (Log_File, "<pre>\n");
     return NO_ERROR_;
 }
 

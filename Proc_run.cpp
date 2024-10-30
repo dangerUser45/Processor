@@ -125,7 +125,7 @@ int Run (SPU* data_proc)
                         return GENERAL_ERROR; 
        
         } 
-        Dump_proccessor (data_proc);
+        Dump_proccessor (data_proc, "Run: ");
         getchar ();
     }
     #undef IP

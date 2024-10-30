@@ -4,11 +4,11 @@ asm : Asm.o Debug.o Stack.o Print.o Processing.o Debug_proc.o
 	$(Compiler) Asm.o Debug.o Stack.o Print.o Processing.o -o asm
 
 proc: 
-	$(Compiler) proc.cpp proc_run.cpp Stack_for_proc\debug.cpp Onegin_for_proc\Processing.cpp  Onegin_for_proc\print.cpp Stack_for_proc\stack.cpp -o proc
+	$(Compiler) proc.cpp proc_run.cpp Stack_for_proc\debug.cpp Onegin_for_proc\Processing.cpp  Onegin_for_proc\print.cpp Stack_for_proc\stack.cpp Debug_proc.cpp -o proc
 
 Asm.o : asm.cpp
 	$(Compiler) -c asm.cpp -o asm.o
-
+		
 Debug.o : Stack_for_proc\Debug.cpp
 	$(Compiler) -c Stack_for_proc\Debug.cpp -o Debug.o
 
