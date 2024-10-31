@@ -6,5 +6,5 @@ pop bx
 pop cx
 push 20
 sqrt
-ja 5
+out 
 hlt

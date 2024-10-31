@@ -29,36 +29,36 @@ int Dump (const stack_t* Data)
 {
     FILE* fp = Log_File;
     assert (fp);
-    fprintf (fp, "//================================================================================================\n");
-
-    fprintf (fp, "\tSTRUCT:\n");
+    fprintf (Log_File, "\t\t\t\t\t\t\t\t\t\t\t<b><font color=#7419bb> ____________________________________\n");    fprintf (fp, "\t\t\t\t\t\t\t\t\t\t\t|\t      STRUCT:\t\t     |\n");
 
     if (Data == NULL)
     {
-        fprintf (Log_File, "Data = NULL\n");
+
+        fprintf (Log_File, "\t\t\t\t\t\t\tData = NULL\n");
         return BAD_POINTER;
     }
 
 
-    ONDEBUG(fprintf (fp, "  canary1_struct = %d\n", Data -> canary1_struct);)
-    fprintf (fp, "  buffer = %p\n", Data -> buffer);
-    fprintf (fp, "  size = %zd\n", Data -> size);
-    fprintf (fp, "  capacity = %zd\n", Data -> capacity);
-    ONDEBUG(fprintf (fp, "  canary2_struct = %d\n", Data -> canary2_struct);)
+    ONDEBUG(fprintf (fp, "\t\t\t\t\t\t\t\t\t\t\t|  canary1_struct = %lf  |\n", Data -> canary1_struct);)
+    fprintf (fp, "\t\t\t\t\t\t\t\t\t\t\t|  buffer = %p\t     |\n  ", Data -> buffer);
+    fprintf (fp, "\t\t\t\t\t\t\t\t\t\t\t|  size = %zd\t\t\t     |\n", Data -> size);
+    fprintf (fp, "\t\t\t\t\t\t\t\t\t\t\t|  capacity = %zd\t\t     |\n", Data -> capacity);
+    ONDEBUG(fprintf (fp, "\t\t\t\t\t\t\t\t\t\t\t|  canary2_struct = %lf  |\n", Data -> canary2_struct);)    fprintf (Log_File, "\t\t\t\t\t\t\t\t\t\t\t|____________________________________|   </font></b>\n");
 
     if (Data -> buffer == NULL) 
-    {
-        fprintf (fp,"//================================================================================================\n");
         return BUFFER_NULL;
-    }
 
-    fprintf (fp, "\t\t\t\tSTACK:\n");
-    ONDEBUG(fprintf (fp, "\tcanary1_buf) <%016d> --- address: %p\n", Data -> buffer[0], Data -> buffer);)
+    fprintf (fp, "\t\tSTACK:\n");
+    fprintf (Log_File, "\t<b><font color=#2a00ff>Address</font>:  \t\t<font color=#ff0000>Value</font>:</b>\n");
+    ONDEBUG(fprintf (fp, "   <b><font color =#9d7167>cn1) %p\t%lf\n</font></b>",Data -> buffer, Data -> buffer[0]);)
     for (ssize_t i = 0 ONDEBUG(+ 1); i < Data -> capacity ONDEBUG(+ 1); ++i)
-        fprintf (fp, "\t\t  %zd) <%016d> --- address: %p\n", i, Data -> buffer[i], Data -> buffer + i);
-    ONDEBUG(fprintf (fp, "\tcanary2_buf) <%016d> --- address: %p\n", Data -> buffer[Data -> capacity + 1], Data -> buffer + Data -> capacity + 1);)
+    {
+        fprintf (Log_File, "   %3zu) %p", i, Data -> buffer + i);
+        fprintf (Log_File, "\t%lf\n",Data -> buffer [i]);  
+    }
+    ONDEBUG(fprintf (fp, "   <b><font color =#9d7167>cn1) %p\t%lf</font></b>",Data -> buffer + Data -> capacity + 1, Data -> buffer[Data -> capacity + 1 ]);)
     fprintf (fp, "\n");
-    fprintf (fp,"//================================================================================================\n");
+    fprintf (fp,"//=====================================================================================================================================================================\n");
     return 0;
 }
 //==================================================================================================

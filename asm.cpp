@@ -295,6 +295,6 @@ int Fill_Code_file (ASM* data_asm, const char* name)
 //==================================================================================================
 int Ctor_Labels ()
 {
-
+    
     return NO_ERROR_;
 }

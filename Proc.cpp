@@ -11,7 +11,7 @@
 int main (int argc, char* argv[])
 {   
    Check_argc (argc);
-   Create_file ("PROC_LOG.txt");    //создал log_file
+   Create_file ("PROC_LOG.html");    //создал log_file
 
     SPU data_proc = {};  
    Ctor_for_proc (&data_proc);                              //create buffer_for_code and registers  
@@ -20,7 +20,7 @@ int main (int argc, char* argv[])
     
     int res = Load_code (&data_proc, code_text, data_proc.buffer_for_code, 100); 
     fclose (code_text);
-    if (res) abort ();
+    if (res) {puts("\nError of loading code !"); abort ();}
 
     Dump_proccessor (&data_proc, "main (): Begining dump");
 

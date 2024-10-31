@@ -126,7 +126,7 @@ int Run (SPU* data_proc)
        
         } 
         Dump_proccessor (data_proc, "Run: ");
-        getchar ();
+        
     }
     #undef IP
 }
@@ -161,11 +161,11 @@ int Jump (el_t* code, int* ip)
 int Ctor_for_proc (SPU* data_for_proc)
 {
     assert (data_for_proc);
-    el_t* buffer_for_code = (el_t*) calloc (100, sizeof (el_t));
+    el_t* buffer_for_code = (el_t*) calloc (INIT_NUM_EL, sizeof (el_t));
     if (buffer_for_code != NULL)
     data_for_proc -> buffer_for_code = buffer_for_code;
 
-    STACK_CTOR(&data_for_proc -> stk, 100);
+    STACK_CTOR(& data_for_proc -> stk, 100);
 
     el_t* reg = (el_t*) calloc (NUM_REGS, sizeof (el_t));
    if (reg != NULL)

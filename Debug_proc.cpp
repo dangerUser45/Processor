@@ -2,6 +2,7 @@
 
 #include "Proc_common.h"
 #include "Stack_for_proc\Stack_Common.h"
+#include "Stack_for_proc\Debug.h"
 #include "Debug_proc.h"
 
 
@@ -38,16 +39,16 @@ int Dump_proccessor (const SPU* data_proc, const char* name_calling)
     int ip = data_proc -> ip; 
 
     fprintf (Log_File, "=================================================================\n");
-    fprintf (Log_File, "\t\t\t\04 THE BEST DUMP YOU'VE EVER SEEN \04\n");
+    fprintf (Log_File, "\t\t\t<font color=#2f7d60>  THE BEST DUMP YOU'VE EVER SEEN </font>\n");
 
-    fprintf (Log_File, "\tCalling from: %s\n", name_calling);
-    fprintf (Log_File, "\t\tSTRUCT SPU: \n");
-    fprintf (Log_File, "\n\t\t\10BUFFER_FOR_CODE\n");
+    fprintf (Log_File, "\tCalling from: <font color=#ff7c00>%s\n</font>", name_calling);
+    fprintf (Log_File, "\t\t<font size = \"4\"> \nSTRUCT SPU:</font>\n");
+
+
+    fprintf (Log_File, "\n\t\tBUFFER_FOR_CODE\n");
     fprintf (Log_File, "\tnum_of_read_item = %zu\n", data_proc -> num_of_read_item);
-
-
     //           Dump_massiv ()                          TODO
-    fprintf (Log_File, "\tAddress:  \t\tValue:  \tDizasm:\n"); 
+    fprintf (Log_File, "\t<b><font color=#2a00ff>Address</font>:  \t\t<font color=#ff0000>Value</font>:  \t<font color=#277a0a>Dizasm</font>:</b> \n"); 
     for (size_t i = 0; i < data_proc -> num_of_read_item; ++i)
     {
         fprintf (Log_File, "    %2zu) %p\t", i + 1, data_proc -> buffer_for_code + i);
@@ -56,9 +57,9 @@ int Dump_proccessor (const SPU* data_proc, const char* name_calling)
     
     }
     
-    fprintf (Log_File, "\n\t\t\10REGISTER_BUFFER\n");
+    fprintf (Log_File, "\n\t\tREGISTER_BUFFER\n");
     //           Dump_massiv ()                           TODO
-    fprintf (Log_File, "\tAddress:  \t\tValue:\n");
+    fprintf (Log_File, "\t<b><font color=#2a00ff>Address</font>:  \t\t<font color=#ff0000>Value</font>:</b>\n");
     for (size_t i = 0; i < NUM_REGS; ++i)
     {
 
@@ -66,16 +67,23 @@ int Dump_proccessor (const SPU* data_proc, const char* name_calling)
         fprintf (Log_File, "\t%p", data_proc -> register_buffer + i);
         fprintf (Log_File, "\t%lf\n", data_proc -> register_buffer[i]);
     }
-    fprintf (Log_File, "\n\t\t\10STK\n");
-    //           Dump_massiv ()                           TODO
-    //Dump (&data_proc -> stk);
- 
+                                        //STACK
+    Dump (& data_proc -> stk);
 
-      //Dump (&data_proc -> stk);
+
      for (int i = 0; i < data_proc -> n_cmd; ++i)
-    fprintf (Log_File, "    %2d) %lf\n", i ,data_proc -> stk.buffer[i]);
- 
+    fprintf (Log_File, "    %3d) %lf\n", i ,data_proc -> stk.buffer[i]);
+
+
+    /*
+    fprintf (Log_File, "\t<b><font color=#2a00ff>Address</font>:  \t\t<font color=#ff0000>Value</font>:</b>\n"); 
+    for (size_t i = 0; i < INIT_NUM_EL + 2; ++i)
+    {
+        fprintf (Log_File, "    %3zu) %p", i ,data_proc -> stk.buffer + i);
+        fprintf (Log_File, "\t%07lf\n", data_proc -> stk.buffer[i]);
+    }
     fprintf (Log_File, "=================================================================\n");
+    */
 
     return NO_ERROR_;
 }
