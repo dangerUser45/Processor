@@ -14,6 +14,7 @@ int main (int argc, char* argv[])
 
     Create_file ("ASM_LOG.html");    //создал log_file
     Check_argc (argc);
+    Ctor_Labels (&data_asm);
 
     onegin_data.name = argv[1];
     onegin_data.fsize = file_size (argv[1]);
@@ -36,6 +37,8 @@ int main (int argc, char* argv[])
     Fill_Code_file (&data_asm, "OUT_ASM.txt");
 
     Close_file (Log_File);
+
+    Ctor_Labels (&data_asm);
     Asm_Dtor (&data_asm.mem_cmd);
     return 0;
 }
@@ -56,9 +59,14 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
         int type_of_arg = 0;
 
         sscanf (str_data[line].str_addr, "%s%n", temp_string, &cnt_rd_sym);
+        sscanf ();
 
         if (sscanf (str_data[line].str_addr + cnt_rd_sym, "%lf", &temp_value) == 1)
             type_of_arg = 1;
+
+        if (sscanf (str_data[line].str_addr + cnt_rd_sym, "%s", &temp_value) == 1 &&
+            strchr(temp_value, ':')  != NULL)
+            
 
         else if (sscanf (str_data[line].str_addr + cnt_rd_sym, "%s", string_for_type) == 1)
         {
@@ -236,6 +244,8 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
 //==================================================================================================
 int Asm_Ctor (ASM* data_asm, long size)
 {
+    Ctor_Labels (data_asm);
+
     long size_mem_cmd = 4 * size;
     el_t* mem_cmd = (el_t*) calloc (size_mem_cmd, sizeof (el_t));
 
@@ -293,8 +303,51 @@ int Fill_Code_file (ASM* data_asm, const char* name)
     return NO_ERROR_;
 }
 //==================================================================================================
-int Ctor_Labels ()
+int Ctor_Labels (ASM* data_asm)
 {
-    
+    assert (data_asm);
+    label* label_ptr = (label*) calloc (INIT_NUM_LABELS, sizeof (label));
+
+    data_asm -> mass_label_struct = label_ptr;
+
+    return NO_ERROR_;
+}
+//==================================================================================================
+int Add_Label (label* mass_label_struct)
+{
+    assert(mass_label_struct);
+
+
+
+
+    return NO_ERROR_;
+}
+//==================================================================================================
+int Getting_Labels ()
+{
+
+    return NO_ERROR_;
+}
+//==================================================================================================
+int Dtor_Labels (ASM* data_asm)
+{
+    assert (data_asm);
+
+    if (data_asm -> mass_label_struct)
+    free (data_asm -> mass_label_struct);
+
+    return NO_ERROR_;
+}
+//==================================================================================================
+int Dump_of_label (label* mass_label_struct)
+{
+    assert(mass_label_struct);
+
+    for (int i = 0; i < INIT_NUM_LABELS; ++i)
+    {
+        fprintf (Log_File, "\t<b><font color=#2a00ff>Address</font>:  \t\t<font color=#ff0000>Value</font>:</b>\n");
+        fprintf (Log_File, "  %3d) %p", i, mass_label_struct[i].addr);
+
+    }
     return NO_ERROR_;
 }

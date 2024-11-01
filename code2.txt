@@ -1,5 +1,8 @@
 push 10
-in
-out
-out
+
+pop
+
+push 40
+1:
+
 hlt
