@@ -8658,6 +8658,8 @@ void (*_txDllImport (const char dllFileName[], const char funcName[], bool requi
         strncpy_s (path, sizeof (path), dllPaths[i], sizeof (dllPaths[i]));
         size_t len = strlen (path);
 
+        SetDllDirectory (path);
+
         strncpy_s (path + len, sizeof (path) - len, dllArch, sizeof (dllArch));
         if (!dll) dll = LoadLibrary (path);  //-V547
 
@@ -8665,6 +8667,8 @@ void (*_txDllImport (const char dllFileName[], const char funcName[], bool requi
         if (!dll) dll = LoadLibrary (path);
         }
 
+    SetDllDirectory (NULL);
+    
     if (!dll) dll = LoadLibrary (dllArch);
     if (!dll) dll = LoadLibrary (dllName);
 
@@ -16365,11 +16369,7 @@ using ::std::wstring;
                                                                                                                    
                                                                                                                    
                                                                                                                    
-                                                                                                                   
-            
-
-
-
+                                                    
 
 
 

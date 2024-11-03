@@ -47,13 +47,23 @@ int main (int argc, char* argv[])
     return 0;
 }
 //==================================================================================================
+#define Emit(ctx1, ctx2, what)  Emit (ctx1, ctx2, what, __LINE__)
+
 int Processing_Command (ASM* data_asm, STRING* str_data, long size)
 {
-    el_t* mem_cmd = data_asm -> mem_cmd;
     ASM_Context ctx = {};
-    
+    fprintf (Log_File, "<b>    Line     Addr   Str_addr         Command          Cur_str/Temp_str      Args      Code\n</b>");
+    //fprintf (Log_File, "<b><font color =#FF0000>\t\tIP\n</font></b>");   
     while (ctx.line < size)
     {   
+        ctx.current_string = str_data[ctx.line].str_addr;
+
+        fprintf (Log_File, "\n");
+        fprintf (Log_File, "    %-4ld", ctx.line);
+        fprintf (Log_File, "     %04ld", ctx.ip);
+        fprintf (Log_File, "   \'%s\'%*s", str_data[ctx.line].str_addr, 13 - (int)strlen (str_data[ctx.line].str_addr), "");
+
+        //fprintf (Log_File, "<font color =#FF0000>\tip = %ld\n</font>", ctx.ip);
         /*int cnt_rd_sym= 0;
         int type_of_arg = 0;
 
@@ -62,12 +72,14 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
         el_t temp_value = 0;*/
         sscanf (str_data[ctx.line].str_addr, "%s%n", ctx.temp_string, &ctx.cnt_rd_sym);
 
+        fprintf (Log_File, "  \'%s\'%*s",        ctx.temp_string,              8 - (int)strlen (ctx.temp_string), "");
+
         if (strchr(ctx.temp_string, ':')  != NULL)
-            {
-                Add_Label (data_asm -> mass_label_struct, str_data[ctx.line].str_addr, ctx.ip); 
-                ++ctx.line;
-                continue;
-            }    
+        {
+            Add_Label (data_asm -> mass_label_struct, str_data[ctx.line].str_addr, ctx.ip); 
+            ++ctx.line;
+            continue;
+        }    
         /*else if (sscanf (str_data[line].str_addr + cnt_rd_sym, "%s", string_for_type) == 1)
         {
             if (strcmp (string_for_type, "zx") == 0) temp_value = ZERO_RG;
@@ -100,149 +112,152 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
             mem_cmd[ ip++] = (el_t) HLT;
         }*/
 
+        if (strcmp (ctx.temp_string, "hlt") == 0)
+        {
+            Emit (data_asm, &ctx, HLT); 
+        }
+
         else if (strcmp (ctx.temp_string, "push") == 0)
         {
+            $$ Compile_Arg (data_asm, &ctx);
             if (ctx.type_of_arg == 1){
-                mem_cmd[ctx.ip++] = (el_t) PUSH;
-                Compile_Arg (data_asm, &ctx);
-                mem_cmd[ctx.ip++] = (el_t) ctx.temp_value;}
+                Emit (data_asm, &ctx, PUSH);
+                Emit (data_asm, &ctx, ctx.temp_value);}
 
             if (ctx.type_of_arg == 2){
-                mem_cmd[ctx.ip++] = (el_t) PUSH_REG;
-                Compile_Arg (data_asm, &ctx);
-                mem_cmd[ctx.ip++] = (el_t) ctx.temp_value;}
+                Emit (data_asm, &ctx, PUSH_REG);
+                Emit (data_asm, &ctx, ctx.temp_value);}
         }
 
         else if (strcmp (ctx.temp_string, "pop") == 0)
         {
-            if (ctx.type_of_arg == 1){
-                mem_cmd[ctx.ip++] = (el_t) POP;
-                Compile_Arg (data_asm, &ctx);
-                mem_cmd[ctx.ip++] = (el_t) ctx.temp_value;}
+            $$ Compile_Arg (data_asm, &ctx);
+            /*if (ctx.type_of_arg == 1){
+                Emit (data_asm, &ctx, POP);
+                Emit (data_asm, &ctx, ctx.temp_value);} */
 
             if (ctx.type_of_arg == 2){
-                mem_cmd[ctx.ip++] = (el_t) POP_REG;
-                Compile_Arg (data_asm, &ctx);
-                mem_cmd[ctx.ip++] = (el_t) ctx.temp_value;}
+                Emit (data_asm, &ctx, POP_REG);
+                Emit (data_asm, &ctx, ctx.temp_value);}
         }
 
         else if (strcmp (ctx.temp_string, "add") == 0)
         {
-            mem_cmd[ ctx.ip++] = (el_t) ADD;
+            Emit (data_asm, &ctx, ADD);
         }
 
         else if (strcmp (ctx.temp_string, "sub") == 0)
         {
-            mem_cmd[ctx.ip++] = (el_t) SUB;
+            Emit (data_asm, &ctx, SUB);
         }
 
         else if (strcmp (ctx.temp_string, "mul") == 0)
         {
-            mem_cmd[ ctx.ip++] = (el_t) MUL;   
+            Emit (data_asm, &ctx, MUL);   
         }
 
         else if (strcmp (ctx.temp_string, "sqrt") == 0)
         {
-            mem_cmd[ ctx.ip++] = (el_t) SQRT;   
+            Emit (data_asm, &ctx, SQRT);   
         }
 
         else if (strcmp (ctx.temp_string, "in") == 0)
         {
-            mem_cmd[ ctx.ip++] = (el_t) IN__;   
+            Emit (data_asm, &ctx, IN__);   
         }
 
         else if (strcmp (ctx.temp_string, "sin") == 0)
         {
-            mem_cmd[ ctx.ip++] = (el_t) SIN;   
+            Emit (data_asm, &ctx, SIN);   
         }
 
         else if (strcmp (ctx.temp_string, "cos") == 0)
         {
-            mem_cmd[ ctx.ip++] = (el_t) COS;   
+            Emit (data_asm, &ctx, COS);   
         }
 
         else if (strcmp (ctx.temp_string, "dump") == 0)
         {
-            mem_cmd[ ctx.ip++] = (el_t) DUMP;   
+            Emit (data_asm, &ctx, DUMP);   
         }
         
         else if (strcmp (ctx.temp_string, "div") == 0)
         {
-            mem_cmd[ ctx.ip++] = (el_t) DIV;   
+            Emit (data_asm, &ctx, DIV);   
         }
 
         else if (strcmp (ctx.temp_string, "call") == 0)                                                                                                                                
         {
-            mem_cmd[ ctx.ip++] = (el_t) CALL;
             Compile_Arg (data_asm, &ctx);
-            mem_cmd[ ctx.ip++] = (el_t) ctx.temp_value;
+            Emit (data_asm, &ctx, CALL);
+            Emit (data_asm, &ctx, ctx.temp_value);
         }
 
         else if (strcmp (ctx.temp_string, "ret") == 0)                                                                                                                                      
         {
-            mem_cmd[ ctx.ip++] = (el_t) RET;
+            Emit (data_asm, &ctx, RET);
         }
 
         else if (strcmp (ctx.temp_string, "jmp") == 0)                                                                           
         {
-            mem_cmd[ ctx.ip++] = (el_t) JMP;
             Compile_Arg (data_asm, &ctx);
-            mem_cmd[ ctx.ip++] = (el_t) ctx.temp_value;
+            Emit (data_asm, &ctx, JMP);
+            Emit (data_asm, &ctx, ctx.temp_value);
         }
 
         else if (strcmp (ctx.temp_string, "ja") == 0)
         {
-            mem_cmd[ ctx.ip++] = (el_t) JA;
-            Compile_Arg (data_asm, &ctx);
-            mem_cmd[ ctx.ip++] = (el_t) ctx.temp_value;
+            $$ Compile_Arg (data_asm, &ctx);
+            Emit (data_asm, &ctx, JA);
+            Emit (data_asm, &ctx, ctx.temp_value);
         }
 
         else if (strcmp (ctx.temp_string, "jb") == 0)
         {
-            mem_cmd[ ctx.ip++] = (el_t) JB;
             Compile_Arg (data_asm, &ctx);
-            mem_cmd[ ctx.ip++]  = (el_t) ctx.temp_value;
+            Emit (data_asm, &ctx, JB);
+            Emit (data_asm, &ctx, ctx.temp_value);
              
             //записать в массив
         }
 
         else if (strcmp (ctx.temp_string, "jae") == 0)
         {
-            mem_cmd[ ctx.ip++] = (el_t) JAE;
             Compile_Arg (data_asm, &ctx);
-            mem_cmd[ ctx.ip++] = (el_t) ctx.temp_value;
+            Emit (data_asm, &ctx, JAE);
+            Emit (data_asm, &ctx, ctx.temp_value);
              
             //записать в массив
         }
 
         else if (strcmp (ctx.temp_string, "jbe") == 0)
         {
-            mem_cmd[ctx.ip++] = (el_t) JBE;
             Compile_Arg (data_asm, &ctx);
-            mem_cmd[ctx.ip++ ] = (el_t) ctx.temp_value;
+            Emit (data_asm, &ctx, JBE);
+            Emit (data_asm, &ctx, ctx.temp_value);
              
             //записать в массив
         }
 
         else if (strcmp (ctx.temp_string, "je") == 0)
         {
-            mem_cmd[ctx.ip++] = (el_t) JE;
             Compile_Arg (data_asm, &ctx);
-            mem_cmd[ctx.ip++] = (el_t) ctx.temp_value;
+            Emit (data_asm, &ctx, JE);
+            Emit (data_asm, &ctx, ctx.temp_value);
              
             //записать в массив
         }
 
        else if (strcmp (ctx.temp_string, "jhe") == 0)
         {
-            mem_cmd[ctx.ip++] = (el_t) JHE;
             Compile_Arg (data_asm, &ctx);
-            mem_cmd[ctx.ip++] = (el_t) ctx.temp_value;
+            Emit (data_asm, &ctx, JHE);
+            Emit (data_asm, &ctx, ctx.temp_value);
         }
 
         else if (strcmp (ctx.temp_string, "out") == 0)
         {
-            mem_cmd[ctx.ip++] = (el_t) OUT_;
+            Emit (data_asm, &ctx, OUT_);
         }
 
         else
@@ -250,12 +265,28 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
             fprintf (Log_File, "SYNTAX ERROR !: %s", ctx.temp_string);
             return GENERAL_ERROR;
         }
+
+        ++ctx.line;
     }
     data_asm -> final_ip  = ctx.ip;
 
     return NO_ERROR_; 
 }
+
+#undef Emit
 //==================================================================================================
+int Emit (ASM* data_asm, ASM_Context* ctx, el_t data, int line)
+{
+    fprintf (Log_File, "(%.1lf){%d} ", data, line);
+    printf ("Im EMIT (%.1lf){%d}\n", data, line);
+
+    data_asm -> mem_cmd[ctx -> ip++] = data;
+
+    return NO_ERROR_;
+}
+
+//==================================================================================================
+
 int Asm_Ctor (ASM* data_asm, long size)
 {
     Ctor_Labels (data_asm);
@@ -344,7 +375,7 @@ int Add_Label (label* mass_label_struct, const char* name_label, int ip)
 
     static int i = 0;
     mass_label_struct[i].name_of_label = name_label;
-    mass_label_struct[i].addr = ip - 1; 
+    mass_label_struct[i].addr = ip; 
     ++i;
     
     return NO_ERROR_;
@@ -352,13 +383,17 @@ int Add_Label (label* mass_label_struct, const char* name_label, int ip)
 //==================================================================================================
 int Getting_Labels (label* mass_for_label, const char* name_of_label)
 {
-    printf ("Gett.lab. ():  name of label = /%s/\n", name_of_label);
-    for (int i = 0; i < INIT_NUM_LABELS; ++i){
-        if (strcmp (name_of_label, mass_for_label[i].name_of_label))
-            return mass_for_label[i].addr;
-        else 
-        printf ("ERROR in line: %d  Getting_Label()\n", __LINE__ - 2);
+    assert (mass_for_label);
+   
+    printf ("Gett.lab. ():  name of label = /%s/  in massiv = /%s/\n", name_of_label, mass_for_label[0].name_of_label);
+
+    for (int i = 0; i < INIT_NUM_LABELS; ++i)
+    {
+        if (strcmp (name_of_label, mass_for_label[i].name_of_label) == 0)
+            return mass_for_label[i].addr;  
     }
+    
+    printf ("Note in %s:%d: Getting_Label (%s) not found\n", __FILE__, __LINE__, name_of_label);
     return ERROR__;       
 }
 //==================================================================================================
@@ -392,13 +427,29 @@ int Dump_of_label (label* mass_label_struct)
 //==================================================================================================
 int Compile_Arg (ASM* data_asm, ASM_Context* ctx)
 {
+    assert(data_asm);
     assert (ctx);
 
-    if (sscanf ((ctx -> current_string) + (ctx -> cnt_rd_sym), "%lf", &ctx -> temp_value) == 1)
-        ctx -> type_of_arg = 1;
+    fprintf (Log_File, "    '%s'/'%s'    ", ctx -> current_string, ctx -> temp_string);
 
-    else if (sscanf (ctx -> current_string  + ctx -> cnt_rd_sym, "%s", ctx -> temp_string) == 1)
+    ctx -> temp_value = -1;
+    ctx -> type_of_arg = -1;
+
+    if (sscanf ((ctx -> current_string) + (ctx -> cnt_rd_sym), "%lf", &ctx -> temp_value) == 1)
+    {
+        printf ("temp_value = %lf", ctx -> temp_value);
+        ctx -> type_of_arg = 1;
+    }
+
+    if ( (sscanf (ctx -> current_string  + ctx -> cnt_rd_sym, "%s", ctx -> temp_string) == 1) &&
+         ctx -> type_of_arg == -1)
         {
+
+            printf ("I scanning for register...\n");
+
+            //printf ("ctx -> temp_string = %s\n", ctx -> temp_string);          
+            //printf ("ctx -> temp_value = %d\n", ctx -> temp_value);
+
             if (strcmp (ctx -> temp_string, "zx") == 0) ctx -> temp_value = ZERO_RG;
             if (strcmp (ctx -> temp_string, "ax") == 0) ctx -> temp_value = FRST_RG;
             if (strcmp (ctx -> temp_string, "bx") == 0) ctx -> temp_value = SCND_RG;
@@ -409,18 +460,28 @@ int Compile_Arg (ASM* data_asm, ASM_Context* ctx)
             if (strcmp (ctx -> temp_string, "gx") == 0) ctx -> temp_value = SVNTH_RG;
             if (strcmp (ctx -> temp_string, "hx") == 0) ctx -> temp_value = EGHTH_RG;
 
-            ctx -> type_of_arg = 2;
+            if ((int) ctx -> temp_value != -1) ctx -> type_of_arg = 2;
+
+            printf ("register = /%s/ = %lf\n", ctx -> temp_string, ctx -> temp_value);
         }
 
-    else 
+    if (ctx -> type_of_arg == -1) 
         {
-        data_asm -> mem_cmd[] (data_asm -> mass_label_struct, ctx -> temp_string);
+            printf ("IN LABELS PART: ctx -> temp_string = /%s/", ctx -> temp_string);
+            //el_t ip = (el_t) Getting_Labels (data_asm -> mass_label_struct, ctx -> temp_string);
+            //$ (ip); 
+            //Emit (data_asm, ctx, ip, __LINE__); 
+        }
+
+    fprintf (Log_File, "   %.1lf     ",          ctx -> temp_value);
+
     return NO_ERROR_;
 }
+//==================================================================================================
 
 
 
-if (sscanf (str_data[line].str_addr + cnt_rd_sym, "%lf", &temp_value) == 1)
+/*if (sscanf (str_data[line].str_addr + cnt_rd_sym, "%lf", &temp_value) == 1)
             type_of_arg = 1;
 
 
@@ -449,4 +510,4 @@ if (sscanf (str_data[line].str_addr + cnt_rd_sym, "%lf", &temp_value) == 1)
         ++line;
 
         fprintf (Log_File, "%ld)Temp_string = %s\n",line, temp_string);
-        fprintf (Log_File, "Temp_value = %lf\n", temp_value);
+        fprintf (Log_File, "Temp_value = %lf\n", temp_value); */

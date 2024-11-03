@@ -8,6 +8,7 @@ struct ASM;
 struct STRING;
 struct ONEGIN;
 struct label;
+struct ASM_Context;
   
 int Processing_Command (ASM* data_asm, STRING* str_data, long size);
 int Dump (ASM* str_data);
@@ -19,6 +20,9 @@ int Add_Label (label* mass_label_struct, const char* name_label, int ip);
 int Getting_Labels (label* mass_for_label, const char* name_of_label);
 int Dump_of_label (label* mass_label_struct);
 int Dtor_Labels (ASM* data_asm);
+int Compile_Arg (ASM* data_asm, ASM_Context* ctx);
+int Emit (ASM* data_asm, ASM_Context* ctx, el_t data, int line);
+
 
 struct label    
 {

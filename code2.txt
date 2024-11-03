@@ -3,3 +3,9 @@ pop
 push 40
 1:
 hlt
+
+Line Addr   str_addr     Command   Args      Code
+01   0000   'push 5'     'push'    5         01 05
+02   0002   'popr ax'    'popr'    'ax'      21 01
+03   0004   'next:'      'next:'   
+04   0004   'jmp next:'  'jmp'     'next:'   08 04

@@ -1,15 +1,12 @@
+add 
+FFFF:
 push 100
-push 200
-DED_KVADROBER:
-push 300
-pop ax
+pop cx
 pop bx
-pop ex 
-AQEE:
-sqrt
-ja DED_KVADROBER
-ja GRGRGR  
-NEXT:
-out
-GRGRGR: 
+jb FFFF:
+sin 
+cos
+LBL:
+push
+METKA:
 hlt
