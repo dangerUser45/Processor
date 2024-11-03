@@ -1,5 +1,3 @@
-
-#include  "..\SuperLibs\TXLib.h"
 #include "Stack_Common.h"
 #include "Stack.h"
 #include "Debug.h"

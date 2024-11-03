@@ -1,3 +1,5 @@
+#include <math.h>
+
 #include "Machine.h"
 
 #include <string.h>

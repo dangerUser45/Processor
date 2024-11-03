@@ -7,14 +7,13 @@
 #include "Proc_run.h"
 #include "Onegin_for_proc\Onegin_processing.h"
 
-
 int main (int argc, char* argv[])
 {   
-   Check_argc (argc);
-   Create_file ("PROC_LOG.html");    //создал log_file
+    Check_argc (argc);
+    Create_file ("PROC_LOG.html");    //создал log_file
 
     SPU data_proc = {};  
-   Ctor_for_proc (&data_proc);                              //create buffer_for_code and registers  
+    Ctor_for_proc (&data_proc);                              //create buffer_for_code and registers  
 
     FILE* code_text = fopen (argv[1], "r");
     
@@ -30,5 +29,6 @@ int main (int argc, char* argv[])
     Close_file (Log_File);
 
     Dtor_for_proc (&data_proc);
+
     return 0;
 }

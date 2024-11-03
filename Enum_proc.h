@@ -24,6 +24,8 @@ enum CMD
     DUMP     =  19,
     PUSH_REG =  20,
     POP_REG  =  21,
+    CALL     =  22,
+    RET      =  23,
     NUMB_CMD,
 };
 enum REG

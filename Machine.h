@@ -1,7 +1,5 @@
 #pragma once
 
-#include "..\SuperLibs\TXLib.h"
-
 #include <stdio.h>
 
 #include "Enum_proc.h"

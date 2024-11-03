@@ -39,6 +39,7 @@
 
 enum code_error
     {
+        ERROR__          =     -1,
         NO_ERROR_        = (0<<0),
         BUFFER_NULL      = (1<<0),
         BAD_SIZE         = (1<<1),

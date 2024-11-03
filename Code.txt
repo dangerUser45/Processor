@@ -1,10 +1,15 @@
 push 100
 push 200
+DED_KVADROBER:
 push 300
 pop ax
 pop bx
-pop cx
-push 20
+pop ex 
+AQEE:
 sqrt
-out 
+ja DED_KVADROBER
+ja GRGRGR  
+NEXT:
+out
+GRGRGR: 
 hlt

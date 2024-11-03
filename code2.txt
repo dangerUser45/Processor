@@ -1,8 +1,5 @@
 push 10
-
 pop
-
 push 40
 1:
-
 hlt

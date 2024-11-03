@@ -1,36 +1,53 @@
 Compiler = g++
+B = build_proc_asm/
 
-asm : Asm.o Debug.o Stack.o Print.o Processing.o Debug_proc.o
-	$(Compiler) Asm.o Debug.o Stack.o Print.o Processing.o -o asm
+#-----------------------------------------------------------------------
 
-proc : Proc.o Proc_run.o Debug.o Stack.o Print.o Processing.o Debug_proc.o
-	$(Compiler) Proc.o Proc_run.o Debug.o Stack.o Print.o Processing.o Debug_proc.o -o proc
+asm : $(B)Asm.o  $(B)Debug.o  $(B)Stack.o  $(B)Print.o  $(B)Processing.o  $(B)Debug_proc.o  $(B)TXLib.o  
+	$(Compiler)  $(B)Asm.o  $(B)Debug.o  $(B)Stack.o  $(B)Print.o  $(B)Processing.o  $(B)TXLib.o -o asm.exe
 
+proc :  $(B)Proc.o  $(B)Proc_run.o  $(B)Debug.o  $(B)Stack.o  $(B)Print.o  $(B)Processing.o  $(B)Debug_proc.o  $(B)TXLib.o
+	$(Compiler)  $(B)Proc.o  $(B)Proc_run.o  $(B)Debug.o  $(B)Stack.o  $(B)Print.o  $(B)Processing.o  $(B)Debug_proc.o  $(B)TXLib.o -o proc.exe
 
-Asm.o : asm.cpp
-	$(Compiler) -c asm.cpp -o asm.o
+#-----------------------------------------------------------------------
+
+$(B)Asm.o : asm.cpp \
+		Stack_for_proc/Stack_Common.h \
+		Asm.h \
+		Onegin_for_proc/Onegin_processing.h \
+		Onegin_for_proc/Onegin_General.h \
+		Onegin_for_proc/Print.h \
+		Stack_for_proc/Debug.h \
+		Enum_proc.h
+	$(Compiler) -c asm.cpp -o $(B)asm.o
 		
-Proc.o : Proc.cpp
-	$(Compiler) -c proc.cpp -o proc.o
+$(B)Proc.o : Proc.cpp \
+		Machine.h Stack_for_proc/Stack_Common.h Stack_for_proc/Stack.h Stack_for_proc/Debug.h \
+		Asm.h Proc_common.h Proc_run.h Onegin_for_proc/Onegin_processing.h
+	$(Compiler) -c proc.cpp -o $(B)proc.o
 
-Proc_run.o : Proc_run.cpp
-	$(Compiler) -c Proc_run.cpp -o Proc_run.o
+$(B)Proc_run.o : Proc_run.cpp
+	$(Compiler) -c Proc_run.cpp -o $(B)Proc_run.o
 
-Debug.o : Stack_for_proc\Debug.cpp
-	$(Compiler) -c Stack_for_proc\Debug.cpp -o Debug.o
+$(B)Debug.o : Stack_for_proc/Debug.cpp
+	$(Compiler) -c Stack_for_proc/Debug.cpp -o $(B)Debug.o
 
-Stack.o : Stack_for_proc\Stack.cpp
-	$(Compiler) -c Stack_for_proc\Stack.cpp -o Stack.o
+$(B)Stack.o : Stack_for_proc/Stack.cpp
+	$(Compiler) -c Stack_for_proc/Stack.cpp -o $(B)Stack.o
 
-Print.o : Onegin_for_proc\Print.cpp
-	$(Compiler) -c  Onegin_for_proc\print.cpp -o print.o
+$(B)Print.o : Onegin_for_proc/Print.cpp
+	$(Compiler) -c  Onegin_for_proc/print.cpp -o $(B)print.o
 
-Processing.o : Onegin_for_proc\Processing.cpp
-	$(Compiler) -c Onegin_for_proc\processing.cpp -o processing.o
+$(B)Processing.o : Onegin_for_proc/Processing.cpp
+	$(Compiler) -c Onegin_for_proc/processing.cpp -o $(B)processing.o
 
-Debug_proc.o : Debug_proc.cpp
-	$(Compiler) -c debug_proc.cpp -o debug_proc.o
+$(B)Debug_proc.o : Debug_proc.cpp
+	$(Compiler) -c debug_proc.cpp -o $(B)debug_proc.o
 
+$(B)TXLib.o : TXLib.cpp
+	$(Compiler) -c TXLib.cpp -o $(B)TXLib.o
+
+#-----------------------------------------------------------------------
 
 clean :
-	del *.o
+	del build_proc_asm\*.o
