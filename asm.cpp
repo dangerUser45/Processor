@@ -54,12 +54,6 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
     
     while (ctx.line < size)
     {   
-        /*int cnt_rd_sym= 0;
-        int type_of_arg = 0;
-
-        char temp_string [20] = "";
-        char string_for_type [20] = "";
-        el_t temp_value = 0;*/
         sscanf (str_data[ctx.line].str_addr, "%s%n", ctx.temp_string, &ctx.cnt_rd_sym);
 
         if (strchr(ctx.temp_string, ':')  != NULL)
@@ -67,7 +61,7 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
                 Add_Label (data_asm -> mass_label_struct, str_data[ctx.line].str_addr, ctx.ip); 
                 ++ctx.line;
                 continue;
-            }    
+            }
         /*else if (sscanf (str_data[line].str_addr + cnt_rd_sym, "%s", string_for_type) == 1)
         {
             if (strcmp (string_for_type, "zx") == 0) temp_value = ZERO_RG;
@@ -91,14 +85,14 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
         }
             
         ++line;
-
+                
         fprintf (Log_File, "%ld)Temp_string = %s\n",line, temp_string);
-        fprintf (Log_File, "Temp_value = %lf\n", temp_value);
+        fprintf (Log_File, "Temp_value = %lf\n", temp_value); */
 
         if (strcmp (temp_string, "hlt") == 0)
         {
-            mem_cmd[ ip++] = (el_t) HLT;
-        }*/
+            mem_cmd[ ctx.ip++] = (el_t) HLT;
+        }
 
         else if (strcmp (ctx.temp_string, "push") == 0)
         {
@@ -111,8 +105,8 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
                 mem_cmd[ctx.ip++] = (el_t) PUSH_REG;
                 Compile_Arg (data_asm, &ctx);
                 mem_cmd[ctx.ip++] = (el_t) ctx.temp_value;}
-        }
-
+        } 
+            
         else if (strcmp (ctx.temp_string, "pop") == 0)
         {
             if (ctx.type_of_arg == 1){
@@ -251,7 +245,8 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
             return GENERAL_ERROR;
         }
     }
-    data_asm -> final_ip  = ctx.ip;
+    data_asm -> final_ip  = ctx.ip; 
+
 
     return NO_ERROR_; 
 }
@@ -304,7 +299,7 @@ int Dump (ASM* str_data)
     fprintf (Log_File, "\n======================================================================================\n");
 
     return NO_ERROR_;
-}
+}                                                  
 //==================================================================================================
 int Fill_Code_file (ASM* data_asm, const char* name)
 {
