@@ -165,7 +165,7 @@ int Ctor_for_proc (SPU* data_for_proc)
     assert (data_for_proc);
     el_t* buffer_for_code = (el_t*) calloc (INIT_NUM_EL, sizeof (el_t));
     if (buffer_for_code != NULL)
-    data_for_proc -> buffer_for_code = buffer_for_code;
+        data_for_proc -> buffer_for_code = buffer_for_code;
 
     STACK_CTOR(& data_for_proc -> stk, 100);
 

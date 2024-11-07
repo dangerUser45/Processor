@@ -1,12 +1,9 @@
-add 
-FFFF:
-push 100
-pop cx
-pop bx
-jb FFFF:
-sin 
-cos
-LBL:
-push
-METKA:
+pop dx
+SLED:
+out
+jmp DED:
+push 30
+jmp NEXT:
+DED:
+NEXT:
 hlt

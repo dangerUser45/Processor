@@ -6,7 +6,7 @@
 #include "Debug_proc.h"
 
 
-const CMD_INFO info[22] =
+const CMD_INFO info[] =
     {{"hlt",     0},
      {"push",    1},
      {"pop",     1},

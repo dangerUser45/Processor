@@ -34,6 +34,8 @@ int main (int argc, char* argv[])
 
     Asm_Ctor (&data_asm, onegin_data.string_quantity);                                                                                            
     Processing_Command (&data_asm, onegin_data.str_data, onegin_data.string_quantity) OR DIE;
+    Processing_Command (&data_asm, onegin_data.str_data, onegin_data.string_quantity) OR DIE;
+
 
     Dump (&data_asm);
     Dump_of_label (data_asm.mass_label_struct);
@@ -53,7 +55,7 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
 {
     ASM_Context ctx = {};
     fprintf (Log_File, "<b>    Line     Addr   Str_addr         Command          Cur_str/Temp_str      Args      Code\n</b>");
-    //fprintf (Log_File, "<b><font color =#FF0000>\t\tIP\n</font></b>");   
+
     while (ctx.line < size)
     {   
         ctx.current_string = str_data[ctx.line].str_addr;
@@ -63,54 +65,17 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
         fprintf (Log_File, "     %04ld", ctx.ip);
         fprintf (Log_File, "   \'%s\'%*s", str_data[ctx.line].str_addr, 13 - (int)strlen (str_data[ctx.line].str_addr), "");
 
-        //fprintf (Log_File, "<font color =#FF0000>\tip = %ld\n</font>", ctx.ip);
-        /*int cnt_rd_sym= 0;
-        int type_of_arg = 0;
-
-        char temp_string [20] = "";
-        char string_for_type [20] = "";
-        el_t temp_value = 0;*/
         sscanf (str_data[ctx.line].str_addr, "%s%n", ctx.temp_string, &ctx.cnt_rd_sym);
 
         fprintf (Log_File, "  \'%s\'%*s",        ctx.temp_string,              8 - (int)strlen (ctx.temp_string), "");
 
         if (strchr(ctx.temp_string, ':')  != NULL)
         {
-            Add_Label (data_asm -> mass_label_struct, str_data[ctx.line].str_addr, ctx.ip); 
+            Add_Label (data_asm, str_data[ctx.line].str_addr, ctx.ip); 
             ++ctx.line;
             continue;
-        }    
-        /*else if (sscanf (str_data[line].str_addr + cnt_rd_sym, "%s", string_for_type) == 1)
-        {
-            if (strcmp (string_for_type, "zx") == 0) temp_value = ZERO_RG;
-            if (strcmp (string_for_type, "ax") == 0) temp_value = FRST_RG;
-            if (strcmp (string_for_type, "bx") == 0) temp_value = SCND_RG;
-            if (strcmp (string_for_type, "cx") == 0) temp_value = THRD_RG;
-            if (strcmp (string_for_type, "dx") == 0) temp_value = FRTH_RG;
-            if (strcmp (string_for_type, "ex") == 0) temp_value = FFTH_RG;
-            if (strcmp (string_for_type, "fx") == 0) temp_value = SXTH_RG;
-            if (strcmp (string_for_type, "gx") == 0) temp_value = SVNTH_RG;
-            if (strcmp (string_for_type, "hx") == 0) temp_value = EGHTH_RG;
+        }   
 
-            type_of_arg = 2;
-        }
-
-        else if (printf ("??? string_for_type = /%s/\n", string_for_type),
-                 printf ("str_data[line].str_addr + cnt_rd_sym = /%s/\n ", str_data[line].str_addr + cnt_rd_sym),
-                 sscanf ($($(str_data[line].str_addr) + $(cnt_rd_sym)), "%s", string_for_type) == 1){
-            mem_cmd[ip++] = Getting_Labels (data_asm ->mass_label_struct, string_for_type);
-            printf ("!!! string_for_type = /%s/\n", string_for_type);
-        }
-            
-        ++line;
-
-        fprintf (Log_File, "%ld)Temp_string = %s\n",line, temp_string);
-        fprintf (Log_File, "Temp_value = %lf\n", temp_value);
-
-        if (strcmp (temp_string, "hlt") == 0)
-        {
-            mem_cmd[ ip++] = (el_t) HLT;
-        }*/
 
         if (strcmp (ctx.temp_string, "hlt") == 0)
         {
@@ -119,7 +84,7 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
 
         else if (strcmp (ctx.temp_string, "push") == 0)
         {
-            $$ Compile_Arg (data_asm, &ctx);
+                Compile_Arg (data_asm, &ctx);
             if (ctx.type_of_arg == 1){
                 Emit (data_asm, &ctx, PUSH);
                 Emit (data_asm, &ctx, ctx.temp_value);}
@@ -131,7 +96,7 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
 
         else if (strcmp (ctx.temp_string, "pop") == 0)
         {
-            $$ Compile_Arg (data_asm, &ctx);
+                Compile_Arg (data_asm, &ctx);
             /*if (ctx.type_of_arg == 1){
                 Emit (data_asm, &ctx, POP);
                 Emit (data_asm, &ctx, ctx.temp_value);} */
@@ -275,7 +240,7 @@ int Processing_Command (ASM* data_asm, STRING* str_data, long size)
 
 #undef Emit
 //==================================================================================================
-int Emit (ASM* data_asm, ASM_Context* ctx, el_t data, int line)
+int  Emit (ASM* data_asm, ASM_Context* ctx, el_t data, int line)
 {
     fprintf (Log_File, "(%.1lf){%d} ", data, line);
     printf ("Im EMIT (%.1lf){%d}\n", data, line);
@@ -368,41 +333,58 @@ int Ctor_Labels (ASM* data_asm)
     return NO_ERROR_;
 }
 //==================================================================================================
-int Add_Label (label* mass_label_struct, const char* name_label, int ip)
+int Add_Label (ASM* data_asm, const char* name_label, int ip)
 {
-    assert(mass_label_struct);
+    assert(data_asm);
     assert (name_label);
 
-    static int i = 0;
-    mass_label_struct[i].name_of_label = name_label;
-    mass_label_struct[i].addr = ip; 
-    ++i;
-    
+    $(name_label);
+
+    lbl_nm = name_label;
+    lbl_addr = ip; 
+    data_asm -> n_labels += 1;
+
+    $(data_asm -> n_labels);
+
+    $(data_asm -> mass_label_struct[data_asm ->n_labels - 1].name_of_label);
+
+    for (size_t i = 0; i < data_asm -> n_labels; ++i)
+        printf ("!!!lbl_str[n_labels].name_of_label = /%s/\n", data_asm -> mass_label_struct[i].name_of_label);
+
     return NO_ERROR_;
 }
 //==================================================================================================
-int Getting_Labels (label* mass_for_label, const char* name_of_label)
+int Getting_Labels (ASM* data_asm, const char* name_of_label)
 {
-    assert (mass_for_label);
-   
-    printf ("Gett.lab. ():  name of label = /%s/  in massiv = /%s/\n", name_of_label, mass_for_label[0].name_of_label);
+    assert (data_asm);
+    assert (name_of_label);
 
-    for (int i = 0; i < INIT_NUM_LABELS; ++i)
+    $(data_asm -> n_labels);
+   
+    printf ("Gett.lab. ():  name of label = /%s/"
+            "  in massiv = /%s/\n", name_of_label, data_asm ->mass_label_struct[data_asm -> n_labels - 1].name_of_label);
+    printf ("data_asm -> mass_label_struct[0].name_of_label = %s\n", data_asm -> mass_label_struct[0].name_of_label);
+    printf ("data_asm -> mass_label_struct[1].name_of_label = %s\n", data_asm -> mass_label_struct[1].name_of_label);
+  
+
+
+
+    for (size_t i = 0; i < data_asm -> n_labels; ++i)
     {
-        if (strcmp (name_of_label, mass_for_label[i].name_of_label) == 0)
-            return mass_for_label[i].addr;  
+        if (strcmp (name_of_label, data_asm -> mass_label_struct[i].name_of_label) == 0)
+            return data_asm ->mass_label_struct [i].addr;  
     }
     
-    printf ("Note in %s:%d: Getting_Label (%s) not found\n", __FILE__, __LINE__, name_of_label);
-    return ERROR__;       
+    //printf ("Note in %s:%d: Getting_Label (%s) not found\n", __FILE__, __LINE__, name_of_label);
+    return ERROR__;
 }
 //==================================================================================================
 int Dtor_Labels (ASM* data_asm)
 {
     assert (data_asm);
 
-    if (data_asm -> mass_label_struct)                                                                                                                                                                                                          
-    free (data_asm -> mass_label_struct);
+    if (data_asm ->mass_label_struct)                                                                                                                                                                                                          
+    free (data_asm ->mass_label_struct);
 
     return NO_ERROR_;
 }
@@ -437,7 +419,7 @@ int Compile_Arg (ASM* data_asm, ASM_Context* ctx)
 
     if (sscanf ((ctx -> current_string) + (ctx -> cnt_rd_sym), "%lf", &ctx -> temp_value) == 1)
     {
-        printf ("temp_value = %lf", ctx -> temp_value);
+        printf ("temp_value = %lf\n", ctx -> temp_value);
         ctx -> type_of_arg = 1;
     }
 
@@ -467,10 +449,10 @@ int Compile_Arg (ASM* data_asm, ASM_Context* ctx)
 
     if (ctx -> type_of_arg == -1) 
         {
-            printf ("IN LABELS PART: ctx -> temp_string = /%s/", ctx -> temp_string);
-            //el_t ip = (el_t) Getting_Labels (data_asm -> mass_label_struct, ctx -> temp_string);
-            //$ (ip); 
-            //Emit (data_asm, ctx, ip, __LINE__); 
+            //printf ("IN LABELS PART: ctx -> temp_string = /%s/", ctx -> temp_string);
+            ctx -> temp_value = (el_t) Getting_Labels (data_asm, ctx -> temp_string); 
+            $(ctx -> temp_value);
+            $(ctx -> temp_string);
         }
 
     fprintf (Log_File, "   %.1lf     ",          ctx -> temp_value);

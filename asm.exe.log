@@ -3170,3 +3170,1131 @@ Run file:	D:\GitHub\Processor\asm.exe
 Directory:	D:\GitHub\Processor
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF7D30574C8 (64-bit), Flags: Cmdre0, Thread: 0x34FC (Main), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF7D2EEECB9 in D:\GitHub\Processor\asm.exe: TX::_txError()
+# 1 0x00007FF7D2EEEFCB in D:\GitHub\Processor\asm.exe: TX::_txOnSignal()
+# 2 0x00007FFE22F3ADFB in C:\Windows\System32\msvcrt.dll: raise()
+# 3 0x00007FFE22F3F1FB in C:\Windows\System32\msvcrt.dll: abort()
+# 4 0x00007FFE22F3BBC5 in C:\Windows\System32\msvcrt.dll: assert()
+# 5 0x00007FF7D2EE1571 in D:\GitHub\Processor\asm.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  6 2024 23:53:56, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 00:12:09
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF795B074C8 (64-bit), Flags: Cmdre0, Thread: 0x1230 (Main), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF79599ECB9 in D:\GitHub\Processor\asm.exe: TX::_txError()
+# 1 0x00007FF79599EFCB in D:\GitHub\Processor\asm.exe: TX::_txOnSignal()
+# 2 0x00007FFE22F3ADFB in C:\Windows\System32\msvcrt.dll: raise()
+# 3 0x00007FFE22F3F1FB in C:\Windows\System32\msvcrt.dll: abort()
+# 4 0x00007FFE22F3BBC5 in C:\Windows\System32\msvcrt.dll: assert()
+# 5 0x00007FF795991571 in D:\GitHub\Processor\asm.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  6 2024 23:53:56, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 00:17:07
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF658CF74C8 (64-bit), Flags: Cmdre0, Thread: 0x34E8 (Main), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF658B8ECB9 in D:\GitHub\Processor\asm.exe: TX::_txError()
+# 1 0x00007FF658B8EFCB in D:\GitHub\Processor\asm.exe: TX::_txOnSignal()
+# 2 0x00007FFE22F3ADFB in C:\Windows\System32\msvcrt.dll: raise()
+# 3 0x00007FFE22F3F1FB in C:\Windows\System32\msvcrt.dll: abort()
+# 4 0x00007FFE22F3BBC5 in C:\Windows\System32\msvcrt.dll: assert()
+# 5 0x00007FF658B81571 in D:\GitHub\Processor\asm.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  6 2024 23:53:56, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 00:17:30
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF79DDE74C8 (64-bit), Flags: Cmdre0, Thread: 0x27FC (Main), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF79DC7ECB9 in D:\GitHub\Processor\asm.exe: TX::_txError()
+# 1 0x00007FF79DC7EFCB in D:\GitHub\Processor\asm.exe: TX::_txOnSignal()
+# 2 0x00007FFE22F3ADFB in C:\Windows\System32\msvcrt.dll: raise()
+# 3 0x00007FFE22F3F1FB in C:\Windows\System32\msvcrt.dll: abort()
+# 4 0x00007FFE22F3BBC5 in C:\Windows\System32\msvcrt.dll: assert()
+# 5 0x00007FF79DC71571 in D:\GitHub\Processor\asm.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  6 2024 23:53:56, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 00:17:44
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF7709374C8 (64-bit), Flags: Cmdre0, Thread: 0xE44 (Main), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF7707CECB9 in D:\GitHub\Processor\asm.exe: TX::_txError()
+# 1 0x00007FF7707CEFCB in D:\GitHub\Processor\asm.exe: TX::_txOnSignal()
+# 2 0x00007FFE22F3ADFB in C:\Windows\System32\msvcrt.dll: raise()
+# 3 0x00007FFE22F3F1FB in C:\Windows\System32\msvcrt.dll: abort()
+# 4 0x00007FFE22F3BBC5 in C:\Windows\System32\msvcrt.dll: assert()
+# 5 0x00007FF7707C1571 in D:\GitHub\Processor\asm.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  6 2024 23:53:56, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 00:18:18
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF61F9674C8 (64-bit), Flags: Cmdre0, Thread: 0x1830 (Main), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF61F7FECB9 in D:\GitHub\Processor\asm.exe: TX::_txError()
+# 1 0x00007FF61F7FEFCB in D:\GitHub\Processor\asm.exe: TX::_txOnSignal()
+# 2 0x00007FFE22F3ADFB in C:\Windows\System32\msvcrt.dll: raise()
+# 3 0x00007FFE22F3F1FB in C:\Windows\System32\msvcrt.dll: abort()
+# 4 0x00007FFE22F3BBC5 in C:\Windows\System32\msvcrt.dll: assert()
+# 5 0x00007FF61F7F1571 in D:\GitHub\Processor\asm.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 00:18:38, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 00:18:47
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF6D6CC74C8 (64-bit), Flags: Cmdre0, Thread: 0x43DC (Main), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF6D6B5ECE9 in D:\GitHub\Processor\asm.exe: TX::_txError()
+# 1 0x00007FF6D6B5EFFB in D:\GitHub\Processor\asm.exe: TX::_txOnSignal()
+# 2 0x00007FFE22F3ADFB in C:\Windows\System32\msvcrt.dll: raise()
+# 3 0x00007FFE22F3F1FB in C:\Windows\System32\msvcrt.dll: abort()
+# 4 0x00007FFE22F3BBC5 in C:\Windows\System32\msvcrt.dll: assert()
+# 5 0x00007FF6D6B51571 in D:\GitHub\Processor\asm.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 00:18:38, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 00:40:23
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE22F6D113 в функции strcmp(). Попытка прочесть данные по адресу NULL в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF698A574C8 (64-bit), Flags: Cmdre0, Thread: 0x20E0 (Main), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE22F6D113 in C:\Windows\System32\msvcrt.dll: strcmp()
+# 2 0x00007FF6988E2BEC in D:\GitHub\Processor\asm.exe: Compile_Arg()
+# 3 0x00007FF6988E1E0D in D:\GitHub\Processor\asm.exe: Processing_Command()
+# 4 0x00007FF6988E154A in D:\GitHub\Processor\asm.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 00:52:02, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 00:52:13
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE22F6D113 в функции strcmp(). Попытка прочесть данные по адресу NULL в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF698A574C8 (64-bit), Flags: Cmdre0, Thread: 0x20E0 (Main), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE22F6D113 in C:\Windows\System32\msvcrt.dll: strcmp()
+# 2 0x00007FF6988E2BEC in D:\GitHub\Processor\asm.exe: Compile_Arg()
+# 3 0x00007FF6988E1E0D in D:\GitHub\Processor\asm.exe: Processing_Command()
+# 4 0x00007FF6988E154A in D:\GitHub\Processor\asm.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 00:52:02, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 00:52:14
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE22F6D113 в функции strcmp(). Попытка прочесть данные по адресу NULL в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF7F5CA74C8 (64-bit), Flags: Cmdre0, Thread: 0x1DD4 (Main), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE22F6D113 in C:\Windows\System32\msvcrt.dll: strcmp()
+# 2 0x00007FF7F5B32C16 in D:\GitHub\Processor\asm.exe: Compile_Arg()
+# 3 0x00007FF7F5B31E0D in D:\GitHub\Processor\asm.exe: Processing_Command()
+# 4 0x00007FF7F5B3154A in D:\GitHub\Processor\asm.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 01:18:14, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 01:35:11
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE22F6D113 в функции strcmp(). Попытка прочесть данные по адресу NULL в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF7F5CA74C8 (64-bit), Flags: Cmdre0, Thread: 0x1DD4 (Main), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE22F6D113 in C:\Windows\System32\msvcrt.dll: strcmp()
+# 2 0x00007FF7F5B32C16 in D:\GitHub\Processor\asm.exe: Compile_Arg()
+# 3 0x00007FF7F5B31E0D in D:\GitHub\Processor\asm.exe: Processing_Command()
+# 4 0x00007FF7F5B3154A in D:\GitHub\Processor\asm.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 01:18:14, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 01:35:11
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE22F6D113 в функции strcmp(). Попытка прочесть данные по адресу NULL в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF789FB74C8 (64-bit), Flags: Cmdre0, Thread: 0x403C (Main), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE22F6D113 in C:\Windows\System32\msvcrt.dll: strcmp()
+# 2 0x00007FF789E42C51 in D:\GitHub\Processor\asm.exe: Compile_Arg()
+# 3 0x00007FF789E41E0D in D:\GitHub\Processor\asm.exe: Processing_Command()
+# 4 0x00007FF789E4154A in D:\GitHub\Processor\asm.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 01:18:14, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 01:45:18
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FFE22F6D113 в функции strcmp(). Попытка прочесть данные по адресу NULL в модуле C:\Windows\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF789FB74C8 (64-bit), Flags: Cmdre0, Thread: 0x403C (Main), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE22F6D113 in C:\Windows\System32\msvcrt.dll: strcmp()
+# 2 0x00007FF789E42C51 in D:\GitHub\Processor\asm.exe: Compile_Arg()
+# 3 0x00007FF789E41E0D in D:\GitHub\Processor\asm.exe: Processing_Command()
+# 4 0x00007FF789E4154A in D:\GitHub\Processor\asm.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 01:18:14, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 01:45:18
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FF75646251A в функции Ctor_Labels(). Попытка записать данные по адресу NULL в модуле D:\GitHub\Processor\asm.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF7565D84A8 (64-bit), Flags: Cmdre0, Thread: 0x361C (Main), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF75646251A in D:\GitHub\Processor\asm.exe: Ctor_Labels()
+# 1 0x00007FF7564614B1 in D:\GitHub\Processor\asm.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 01:18:14, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 03:38:11
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FF75646251A в функции Ctor_Labels(). Попытка записать данные по адресу NULL в модуле D:\GitHub\Processor\asm.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF7565D84A8 (64-bit), Flags: Cmdre0, Thread: 0x361C (Main), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF75646251A in D:\GitHub\Processor\asm.exe: Ctor_Labels()
+# 1 0x00007FF7564614B1 in D:\GitHub\Processor\asm.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 01:18:14, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 03:38:11
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: #1: Куча была повреждена. (0xC0000374) при выполнении кода по адресу 0x00007FFE23C6F3C9 в функции RtlIsZeroMemory() в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF60DD684A8 (64-bit), Flags: Cmdre0, Thread: 0x620 (Main), errno: 12 (Not enough space), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23C6F3C9 in C:\Windows\SYSTEM32\ntdll.dll: RtlIsZeroMemory()
+# 2 0x00007FFE23C78112 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 3 0x00007FFE23C783FA in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 4 0x00007FFE23C7E081 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 5 0x00007FFE23B9D6F6 in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 6 0x00007FFE23B9B44D in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 7 0x00007FFE22F2A131 in C:\Windows\System32\msvcrt.dll: realloc()
+# 8 0x00007FFE22F29C45 in C:\Windows\System32\msvcrt.dll: calloc()
+#14 0x00007FFE235C7374 in C:\Windows\System32\KERNEL32.dll: BaseThreadInitThunk()
+#15 0x00007FFE23BBCC91 in C:\Windows\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 01:18:14, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 04:40:17
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: #1: Куча была повреждена. (0xC0000374) при выполнении кода по адресу 0x00007FFE23C6F3C9 в функции RtlIsZeroMemory() в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+С помощью функции _set_se_translator() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF60DD684A8 (64-bit), Flags: Cmdre0, Thread: 0x620 (Main), errno: 12 (Not enough space), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23C6F3C9 in C:\Windows\SYSTEM32\ntdll.dll: RtlIsZeroMemory()
+# 2 0x00007FFE23C78112 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 3 0x00007FFE23C783FA in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 4 0x00007FFE23C7E081 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 5 0x00007FFE23B9D6F6 in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 6 0x00007FFE23B9B44D in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 7 0x00007FFE22F2A131 in C:\Windows\System32\msvcrt.dll: realloc()
+# 8 0x00007FFE22F29C45 in C:\Windows\System32\msvcrt.dll: calloc()
+#14 0x00007FFE235C7374 in C:\Windows\System32\KERNEL32.dll: BaseThreadInitThunk()
+#15 0x00007FFE23BBCC91 in C:\Windows\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 01:18:14, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 04:40:18
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+#1: Куча была повреждена. (0xC0000374) при выполнении кода по адресу 0x00007FFE23C6F3C9 в функции RtlIsZeroMemory() в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#3: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF60DD684A8 (64-bit), Flags: Cmdre0, Thread: 0x620 (Main), GetLastError(): 8 (Недостаточно ресурсов памяти для обработки этой команды), errno: 12 (Not enough space), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23C6F3C9 in C:\Windows\SYSTEM32\ntdll.dll: RtlIsZeroMemory()
+# 2 0x00007FFE23C78112 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 3 0x00007FFE23C783FA in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 4 0x00007FFE23C7E081 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 5 0x00007FFE23B9D6F6 in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 6 0x00007FFE23B9B44D in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 7 0x00007FFE22F2A131 in C:\Windows\System32\msvcrt.dll: realloc()
+# 8 0x00007FFE22F29C45 in C:\Windows\System32\msvcrt.dll: calloc()
+#14 0x00007FFE235C7374 in C:\Windows\System32\KERNEL32.dll: BaseThreadInitThunk()
+#15 0x00007FFE23BBCC91 in C:\Windows\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 01:18:14, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 04:40:17
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: #1: Куча была повреждена. (0xC0000374) при выполнении кода по адресу 0x00007FFE23C6F3C9 в функции RtlIsZeroMemory() в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF747F984A8 (64-bit), Flags: Cmdre0, Thread: 0x3920 (Main), errno: 12 (Not enough space), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23C6F3C9 in C:\Windows\SYSTEM32\ntdll.dll: RtlIsZeroMemory()
+# 2 0x00007FFE23C78112 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 3 0x00007FFE23C783FA in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 4 0x00007FFE23C7E081 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 5 0x00007FFE23B9D6F6 in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 6 0x00007FFE23B9B44D in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 7 0x00007FFE22F2A131 in C:\Windows\System32\msvcrt.dll: realloc()
+# 8 0x00007FFE22F29C45 in C:\Windows\System32\msvcrt.dll: calloc()
+#14 0x00007FFE235C7374 in C:\Windows\System32\KERNEL32.dll: BaseThreadInitThunk()
+#15 0x00007FFE23BBCC91 in C:\Windows\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 01:18:14, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 04:41:37
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: #1: Куча была повреждена. (0xC0000374) при выполнении кода по адресу 0x00007FFE23C6F3C9 в функции RtlIsZeroMemory() в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+С помощью функции _set_se_translator() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF747F984A8 (64-bit), Flags: Cmdre0, Thread: 0x3920 (Main), errno: 12 (Not enough space), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23C6F3C9 in C:\Windows\SYSTEM32\ntdll.dll: RtlIsZeroMemory()
+# 2 0x00007FFE23C78112 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 3 0x00007FFE23C783FA in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 4 0x00007FFE23C7E081 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 5 0x00007FFE23B9D6F6 in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 6 0x00007FFE23B9B44D in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 7 0x00007FFE22F2A131 in C:\Windows\System32\msvcrt.dll: realloc()
+# 8 0x00007FFE22F29C45 in C:\Windows\System32\msvcrt.dll: calloc()
+#14 0x00007FFE235C7374 in C:\Windows\System32\KERNEL32.dll: BaseThreadInitThunk()
+#15 0x00007FFE23BBCC91 in C:\Windows\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 01:18:14, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 04:41:37
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+#1: Куча была повреждена. (0xC0000374) при выполнении кода по адресу 0x00007FFE23C6F3C9 в функции RtlIsZeroMemory() в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#3: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF747F984A8 (64-bit), Flags: Cmdre0, Thread: 0x3920 (Main), GetLastError(): 8 (Недостаточно ресурсов памяти для обработки этой команды), errno: 12 (Not enough space), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23C6F3C9 in C:\Windows\SYSTEM32\ntdll.dll: RtlIsZeroMemory()
+# 2 0x00007FFE23C78112 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 3 0x00007FFE23C783FA in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 4 0x00007FFE23C7E081 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 5 0x00007FFE23B9D6F6 in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 6 0x00007FFE23B9B44D in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 7 0x00007FFE22F2A131 in C:\Windows\System32\msvcrt.dll: realloc()
+# 8 0x00007FFE22F29C45 in C:\Windows\System32\msvcrt.dll: calloc()
+#14 0x00007FFE235C7374 in C:\Windows\System32\KERNEL32.dll: BaseThreadInitThunk()
+#15 0x00007FFE23BBCC91 in C:\Windows\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 01:18:14, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 04:41:37
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: #1: Куча была повреждена. (0xC0000374) при выполнении кода по адресу 0x00007FFE23C6F3C9 в функции RtlIsZeroMemory() в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF747F984A8 (64-bit), Flags: Cmdre0, Thread: 0xC3C (Main), errno: 12 (Not enough space), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23C6F3C9 in C:\Windows\SYSTEM32\ntdll.dll: RtlIsZeroMemory()
+# 2 0x00007FFE23C78112 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 3 0x00007FFE23C783FA in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 4 0x00007FFE23C7E081 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 5 0x00007FFE23B9D6F6 in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 6 0x00007FFE23B9B44D in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 7 0x00007FFE22F2A131 in C:\Windows\System32\msvcrt.dll: realloc()
+# 8 0x00007FFE22F29C45 in C:\Windows\System32\msvcrt.dll: calloc()
+#14 0x00007FFE235C7374 in C:\Windows\System32\KERNEL32.dll: BaseThreadInitThunk()
+#15 0x00007FFE23BBCC91 in C:\Windows\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 01:18:14, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 04:41:46
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: #1: Куча была повреждена. (0xC0000374) при выполнении кода по адресу 0x00007FFE23C6F3C9 в функции RtlIsZeroMemory() в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+С помощью функции _set_se_translator() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF747F984A8 (64-bit), Flags: Cmdre0, Thread: 0xC3C (Main), errno: 12 (Not enough space), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23C6F3C9 in C:\Windows\SYSTEM32\ntdll.dll: RtlIsZeroMemory()
+# 2 0x00007FFE23C78112 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 3 0x00007FFE23C783FA in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 4 0x00007FFE23C7E081 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 5 0x00007FFE23B9D6F6 in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 6 0x00007FFE23B9B44D in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 7 0x00007FFE22F2A131 in C:\Windows\System32\msvcrt.dll: realloc()
+# 8 0x00007FFE22F29C45 in C:\Windows\System32\msvcrt.dll: calloc()
+#14 0x00007FFE235C7374 in C:\Windows\System32\KERNEL32.dll: BaseThreadInitThunk()
+#15 0x00007FFE23BBCC91 in C:\Windows\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 01:18:14, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 04:41:46
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+#1: Куча была повреждена. (0xC0000374) при выполнении кода по адресу 0x00007FFE23C6F3C9 в функции RtlIsZeroMemory() в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#3: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF747F984A8 (64-bit), Flags: Cmdre0, Thread: 0xC3C (Main), GetLastError(): 8 (Недостаточно ресурсов памяти для обработки этой команды), errno: 12 (Not enough space), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23C6F3C9 in C:\Windows\SYSTEM32\ntdll.dll: RtlIsZeroMemory()
+# 2 0x00007FFE23C78112 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 3 0x00007FFE23C783FA in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 4 0x00007FFE23C7E081 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 5 0x00007FFE23B9D6F6 in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 6 0x00007FFE23B9B44D in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 7 0x00007FFE22F2A131 in C:\Windows\System32\msvcrt.dll: realloc()
+# 8 0x00007FFE22F29C45 in C:\Windows\System32\msvcrt.dll: calloc()
+#14 0x00007FFE235C7374 in C:\Windows\System32\KERNEL32.dll: BaseThreadInitThunk()
+#15 0x00007FFE23BBCC91 in C:\Windows\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 01:18:14, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 04:41:47
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x00007FF7D6E72176 в функции Processing_Command(). Попытка прочесть данные по адресу 0xFFFFFFFFFFFFFFFF в модуле D:\GitHub\Processor\asm.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF7D6FE84A8 (64-bit), Flags: Cmdre0, Thread: 0x12C0 (Main), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF7D6E72176 in D:\GitHub\Processor\asm.exe: Processing_Command()
+# 5 0x00007FF7D6FAE375 in D:\GitHub\Processor\asm.exe: register_frame_ctor()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 01:18:14, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 04:43:09
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: #1: Куча была повреждена. (0xC0000374) при выполнении кода по адресу 0x00007FFE23C6F3C9 в функции RtlIsZeroMemory() в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF65FFE84A8 (64-bit), Flags: Cmdre0, Thread: 0x348C (Main), errno: 12 (Not enough space), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23C6F3C9 in C:\Windows\SYSTEM32\ntdll.dll: RtlIsZeroMemory()
+# 2 0x00007FFE23C78112 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 3 0x00007FFE23C783FA in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 4 0x00007FFE23C7E081 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 5 0x00007FFE23B9D6F6 in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 6 0x00007FFE23B9B44D in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 7 0x00007FFE22F2A131 in C:\Windows\System32\msvcrt.dll: realloc()
+# 8 0x00007FFE22F29C45 in C:\Windows\System32\msvcrt.dll: calloc()
+#14 0x00007FFE235C7374 in C:\Windows\System32\KERNEL32.dll: BaseThreadInitThunk()
+#15 0x00007FFE23BBCC91 in C:\Windows\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 01:18:14, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 04:43:39
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: #1: Куча была повреждена. (0xC0000374) при выполнении кода по адресу 0x00007FFE23C6F3C9 в функции RtlIsZeroMemory() в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+С помощью функции _set_se_translator() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF65FFE84A8 (64-bit), Flags: Cmdre0, Thread: 0x348C (Main), errno: 12 (Not enough space), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23C6F3C9 in C:\Windows\SYSTEM32\ntdll.dll: RtlIsZeroMemory()
+# 2 0x00007FFE23C78112 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 3 0x00007FFE23C783FA in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 4 0x00007FFE23C7E081 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 5 0x00007FFE23B9D6F6 in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 6 0x00007FFE23B9B44D in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 7 0x00007FFE22F2A131 in C:\Windows\System32\msvcrt.dll: realloc()
+# 8 0x00007FFE22F29C45 in C:\Windows\System32\msvcrt.dll: calloc()
+#14 0x00007FFE235C7374 in C:\Windows\System32\KERNEL32.dll: BaseThreadInitThunk()
+#15 0x00007FFE23BBCC91 in C:\Windows\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 01:18:14, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 04:43:39
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+#1: Куча была повреждена. (0xC0000374) при выполнении кода по адресу 0x00007FFE23C6F3C9 в функции RtlIsZeroMemory() в модуле C:\Windows\SYSTEM32\ntdll.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#3: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF65FFE84A8 (64-bit), Flags: Cmdre0, Thread: 0x348C (Main), GetLastError(): 8 (Недостаточно ресурсов памяти для обработки этой команды), errno: 12 (Not enough space), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FFE23C6F3C9 in C:\Windows\SYSTEM32\ntdll.dll: RtlIsZeroMemory()
+# 2 0x00007FFE23C78112 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 3 0x00007FFE23C783FA in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 4 0x00007FFE23C7E081 in C:\Windows\SYSTEM32\ntdll.dll: RtlpNtSetValueKey()
+# 5 0x00007FFE23B9D6F6 in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 6 0x00007FFE23B9B44D in C:\Windows\SYSTEM32\ntdll.dll: RtlAllocateHeap()
+# 7 0x00007FFE22F2A131 in C:\Windows\System32\msvcrt.dll: realloc()
+# 8 0x00007FFE22F29C45 in C:\Windows\System32\msvcrt.dll: calloc()
+#14 0x00007FFE235C7374 in C:\Windows\System32\KERNEL32.dll: BaseThreadInitThunk()
+#15 0x00007FFE23BBCC91 in C:\Windows\SYSTEM32\ntdll.dll: RtlUserThreadStart()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 01:18:14, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 07 2024 04:43:39
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------

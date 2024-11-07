@@ -8,7 +8,7 @@
 #include "Onegin_for_proc\Onegin_processing.h"
 
 int main (int argc, char* argv[])
-{   
+{
     Check_argc (argc);
     Create_file ("PROC_LOG.html");    //создал log_file
 

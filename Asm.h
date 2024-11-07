@@ -16,8 +16,8 @@ int Asm_Ctor (ASM* data_asm, long size);
 int Asm_Dtor (void* pointer);
 int Fill_Code_file (ASM* data_asm, const char* name);
 int Ctor_Labels (ASM* data_asm);
-int Add_Label (label* mass_label_struct, const char* name_label, int ip);
-int Getting_Labels (label* mass_for_label, const char* name_of_label);
+int Add_Label (ASM* data_asm, const char* name_label, int ip);
+int Getting_Labels (ASM* data_asm, const char* name_of_label);
 int Dump_of_label (label* mass_label_struct);
 int Dtor_Labels (ASM* data_asm);
 int Compile_Arg (ASM* data_asm, ASM_Context* ctx);
@@ -55,7 +55,10 @@ struct ASM
     long final_ip;
 
     label* mass_label_struct;
-
+    size_t n_labels;
 };
+
+#define lbl_nm data_asm -> mass_label_struct[data_asm ->n_labels].name_of_label
+#define lbl_addr data_asm -> mass_label_struct[data_asm ->n_labels].addr
 
 const int INIT_NUM_LABELS = 10;
