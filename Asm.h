@@ -21,7 +21,7 @@ int Getting_Labels (ASM* data_asm, const char* name_of_label);
 int Dump_of_label (label* mass_label_struct);
 int Dtor_Labels (ASM* data_asm);
 int Compile_Arg (ASM* data_asm, ASM_Context* ctx);
-int Emit (ASM* data_asm, ASM_Context* ctx, el_t data, int line);
+int Emit (ASM* data_asm, ASM_Context* ctx, el_t data);
 
 
 struct label    
