@@ -13,11 +13,14 @@ struct SPU
 
    stack_t stk;
    el_t* register_buffer;
+
+   el_t* RAM_addr;
 };
 
 const el_t MY_NUMBER = 13;
 const size_t NUM_REGS = 9;
 const size_t INIT_NUM_EL = 100;
+const size_t RAM_CAPACITY = 8192;
 
 #define _JUMP_COMMON_(flag_cond, code_op, ... ) \
 {                                       \

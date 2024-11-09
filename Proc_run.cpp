@@ -170,9 +170,15 @@ int Ctor_for_proc (SPU* data_for_proc)
     STACK_CTOR(& data_for_proc -> stk, 100);
 
     el_t* reg = (el_t*) calloc (NUM_REGS, sizeof (el_t));
-   if (reg != NULL)
-       data_for_proc -> register_buffer = reg;
-    
+
+    if(reg != NULL) data_for_proc -> register_buffer = reg;
+    else            return ERROR__;
+       
+
+    el_t* ram = (el_t*) calloc (RAM_CAPACITY, sizeof (el_t));
+    if (ram != NULL) data_for_proc -> RAM_addr = ram;
+    else             return ERROR__;
+      
     return NO_ERROR_;
 }
 //==================================================================================================

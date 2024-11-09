@@ -4298,3 +4298,79 @@ Run file:	D:\GitHub\Processor\asm.exe
 Directory:	D:\GitHub\Processor
 
 --------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF6FC8974A8 (64-bit), Flags: Cmdre0, Thread: 0x3FC0 (Main), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF6FC72E969 in D:\GitHub\Processor\asm.exe: TX::_txError()
+# 1 0x00007FF6FC72EC7B in D:\GitHub\Processor\asm.exe: TX::_txOnSignal()
+# 2 0x00007FFE22F3ADFB in C:\Windows\System32\msvcrt.dll: raise()
+# 3 0x00007FFE22F3F1FB in C:\Windows\System32\msvcrt.dll: abort()
+# 4 0x00007FFE22F3BBC5 in C:\Windows\System32\msvcrt.dll: assert()
+# 5 0x00007FF6FC721576 in D:\GitHub\Processor\asm.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 05:39:51, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 09 2024 18:49:57
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: D:\GitHub\Processor\asm.exe,
+
+ВНЕЗАПНО: signal (22, 0x00): SIGABRT: Аварийное завершение программы, вызвана функция abort(). 
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#1: TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400], Instance: 0x00007FF6FC8974A8 (64-bit), Flags: Cmdre0, Thread: 0x4670 (Main), errno: 22 (Invalid argument), _doserrno: 131 (Unknown error). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x00007FF6FC72E969 in D:\GitHub\Processor\asm.exe: TX::_txError()
+# 1 0x00007FF6FC72EC7B in D:\GitHub\Processor\asm.exe: TX::_txOnSignal()
+# 2 0x00007FFE22F3ADFB in C:\Windows\System32\msvcrt.dll: raise()
+# 3 0x00007FFE22F3F1FB in C:\Windows\System32\msvcrt.dll: abort()
+# 4 0x00007FFE22F3BBC5 in C:\Windows\System32\msvcrt.dll: assert()
+# 5 0x00007FF6FC721576 in D:\GitHub\Processor\asm.exe: main()
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 173, Date: 2024-06-23 22:37:05 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	..\SuperLibs\TXLib.h
+Compiled:	Nov  7 2024 05:39:51, GNU g++ 13.2.0, std=201703L, MinGW-W64 Runtime 11.0.1 (alpha - rev. 0) 0000-00-00, 64-bit, Debug
+Started:	Nov 09 2024 19:20:25
+
+Run file:	D:\GitHub\Processor\asm.exe
+Directory:	D:\GitHub\Processor
+
+--------------------------------------------------

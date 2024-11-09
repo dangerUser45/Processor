@@ -1,9 +1,7 @@
-pop dx
-SLED:
-out
-jmp DED:
-push 30
-jmp NEXT:
-DED:
-NEXT:
+in
+in
+in
+pop ax
+pop bx
+pop cx
 hlt
